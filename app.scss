@@ -1,0 +1,19 @@
+// Base
+@import 'base/reset';
+@import 'base/variables';
+@import 'base/base';
+@import 'base/flex';
+@import 'base/spacers';
+@import 'base/displays';
+@import 'base/sizing';
+
+// Utilities
+@import 'utilities/mixins';
+@import 'utilities/buttons';
+@import 'utilities/loaders';
+@import 'utilities/containers';
+
+// Vendors
+// Comment and Uncomment to enable in the project
+@import 'vendor/family'; // a set mixins which will help you to manage the style of :nth-child’ified elements, in an easy and classy way.
+@import 'vendor/gridlex/gridlex'; // css grid system to quickly create modern layouts and submodules.

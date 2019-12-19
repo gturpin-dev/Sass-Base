@@ -1,0 +1,41 @@
+// m-100 = margin: 1.00rem
+
+// step = .25rem
+$ending: 5; // 5rem
+
+$spacers: (
+  "m": "margin",
+  "mt": "margin-top",
+  "mr": "margin-right",
+  "mb": "margin-bottom",
+  "ml": "margin-left",
+  "p": "padding",
+  "pt": "padding-top",
+  "pr": "padding-right",
+  "pb": "padding-bottom",
+  "pl": "padding-left",
+);
+
+$multiple-spacers: (
+  "mx": ["margin-left", "margin-right"],
+  "my": ["margin-top", "margin-bottom"],
+  "px": ["padding-left", "padding-right"],
+  "py": ["padding-top", "padding-bottom"],
+);
+
+@for $i from 0 through $ending / .25 {
+
+  @each $prefix, $rule in $spacers {
+    .#{$prefix}-#{($i * 25)} {
+      #{$rule}: $i * .25rem !important;
+    }
+  }
+
+  @each $prefix, $rules in $multiple-spacers {
+    .#{$prefix}-#{($i * 25)} {
+      @each $rule in $rules {
+        #{$rule}: $i * .25rem !important;
+      }
+    } // end prefix
+  } // endeach
+}

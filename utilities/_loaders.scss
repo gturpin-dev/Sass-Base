@@ -1,0 +1,71 @@
+%spinner {
+  display: inline-block;
+  color: inherit;
+  vertical-align: middle;
+  pointer-events: none;
+}
+
+//////////////////////////////
+///// Template animation /////
+//////////////////////////////
+// use any of these placeholder in $animation to use it
+%classic {
+  border: .2em solid currentcolor;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  animation: 1s spin linear infinite;
+  position: relative;
+}
+
+%classic-bcg {
+	border: .2em solid transparent;
+	border-top-color: currentcolor;
+	border-radius: 50%;
+	animation: 1s spin linear infinite;
+	position: relative;
+
+	&:before {
+		content: '';
+		display: block;
+		width: inherit;
+		height: inherit;
+		position: absolute;
+		top: -.2em;
+		left: -.2em;
+		border: .2em solid currentcolor;
+		border-radius: 50%;
+		opacity: .5;
+	}
+}
+
+%classic-fit {
+  background: transparent;
+  border-top: 4px solid #03A9F4;
+  border-right: 4px solid transparent;
+  border-radius: 50%;
+  animation: 1s spin linear infinite;
+}
+//////////////////////////////////
+///// END Template animation /////
+//////////////////////////////////
+
+/// @param  {number} $size      [1em]         size of spinner
+/// @param  {color}  $color     [#000]        color of snipper
+/// @param  {string} $animation ['classic']   name of placeholder animation
+/// @output a spinner which can be use like a loader
+@mixin spinner($size: 1em, $color: #000, $animation: 'classic') {
+  @extend %spinner;
+  width: $size;
+  height: $size;
+  color: $color;
+  @extend %#{$animation};
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

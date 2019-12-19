@@ -1,0 +1,57 @@
+// Creates a bootstrap container and an extended one
+
+/// bootstrap container-width
+/// @type {map}
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+/// bootstrap breakpoints
+/// @type {map}
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+.container {
+  box-sizing: border-box;
+  @each $breakpoint, $container-value in $container-max-widths {
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      max-width: $container-value;
+    }
+  }
+  width: 100%;
+  padding-right: 5px;
+  padding-left: 5px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container-extended {
+  @extend .container;
+  @media (min-width: 1400px) {
+    max-width: 1340px;
+  }
+}

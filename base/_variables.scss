@@ -1,0 +1,44 @@
+/// Call a css variable faster by calling v(name);
+/// @param  {variable} $var variable css
+/// @return {variable}      css Variable
+@function v($var) {
+  @return var(--#{$var});
+}
+
+// Main fonts
+@import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
+$font-primary: 'Cabin', sans-serif !default;
+$font-secondary: 'Monserrat', sans-serif !default;
+
+// Main colors
+$color-primary:  #6C63FF !default;
+$color-secondary:  #4285F4 !default;
+$color-grey:  #4A4A4A !default;
+$color-lightgrey: #737373 !default;
+$color-danger: #D23737 !default;
+
+/// array of main colors
+/// @type {map}
+$theme-colors: (
+  "primary":    $color-primary,
+  "secondary":  $color-secondary,
+  "grey":  $color-grey,
+  "lightgrey":  $color-lightgrey,
+  "danger":  $color-danger,
+);
+
+/// array of breakpoints
+/// @type {map}
+$breakpoints: (
+  'tablet-paysage': 992px,
+  'tablet-portrait': 768px,
+  'mobile': 568px
+);
+
+/// @param  {[type]} $bp a breakpoint
+/// @output style at max $bp breakpoint
+@mixin breakpoint($bp) {
+  @media screen and (max-width: $bp) {
+    @content;
+  }
+}

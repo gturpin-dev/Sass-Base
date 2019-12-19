@@ -1,0 +1,33 @@
+// Width and height
+
+$step: 25; // 25%
+
+$props: (
+  "w": (
+    "prop": width,
+    "unit": '%',
+  ),
+  "h": (
+    "prop": height,
+    "unit": '%',
+  ),
+  "vw": (
+    "prop": width,
+    "unit": 'vw',
+  ),
+  "vh": (
+    "prop": height,
+    "unit": 'vh',
+  ),
+);
+
+@for $i from 0 through 100/$step {
+  $val: $i * $step;
+
+  @each $prefix, $item in $props {
+    .#{$prefix}-#{$val} {
+      #{map-get($item, 'prop')}: $val+#{map-get($item, 'unit')};
+      max-#{map-get($item, 'prop')}: $val+#{map-get($item, 'unit')};
+    }
+  }
+}
