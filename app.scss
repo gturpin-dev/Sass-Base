@@ -6,12 +6,14 @@
 @import 'base/spacers';
 @import 'base/displays';
 @import 'base/sizing';
+@import 'base/colors';
 
 // Utilities
 @import 'utilities/mixins';
 @import 'utilities/buttons';
 @import 'utilities/loaders';
 @import 'utilities/containers';
+@import 'utilities/emmet';
 
 // Vendors
 // Comment and Uncomment to enable in the project

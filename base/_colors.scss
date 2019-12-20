@@ -1,0 +1,10 @@
+// colors
+@each $name, $color in $theme-colors {
+  .color-#{$name} {
+    color: $color !important;
+  }
+
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+}
