@@ -35,10 +35,29 @@ $breakpoints: (
   'mobile': 568px
 );
 
-/// @param  {[type]} $bp a breakpoint
-/// @output style at max $bp breakpoint
-@mixin breakpoint($bp) {
-  @media screen and (max-width: $bp) {
-    @content;
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
   }
+
+  @return $number;
+}
+
+/// return the content under the breakpoint param
+/// @param {number} $size the breakpoint
+/// @output {content} content to add
+@mixin under($size) {
+  $size: strip-unit($size);
+  @media (max-width: $size + 1px) { @content; }
+}
+
+/// return the content above the breakpoint param
+/// @param {number} $size the breakpoint
+/// @output {content} content to add
+@mixin above($size) {
+  $size: strip-unit($size);
+  @media (min-width: $size + 1px) { @content; }
 }

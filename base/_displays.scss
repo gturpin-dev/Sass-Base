@@ -7,8 +7,6 @@ $displays: (
   'iflex': inline-flex,
 );
 
-@media print {
-  @each $name, $value in $displays {
-    .d-#{$name} { display: $value !important; }
-  }
+@each $name, $value in $displays {
+  .d-#{$name} { display: $value !important; }
 }
