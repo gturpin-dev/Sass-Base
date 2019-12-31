@@ -1,0 +1,62 @@
+/// Excerpt some text and truncate him when he's over
+/// @param  {number}  $lineHeight [1.2em]       line height of text
+/// @param  {number}  $lineCount  [3]           number of line you want in excerpted text
+/// @param  {Boolean} $multiline  [true]        enable multiline
+/// @example scss - excerpt-text mixin
+///   excerpt-text('1.2em', '3', 'true')
+/// @since v-1.0.0
+/// @author Guillaume TURPIN
+/// @output style which permits the truncation by the number of line you want
+@mixin excerpt-text($lineHeight: 1.2em, $lineCount: 3, $multiline: true) {
+  @if $multiline {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: $lineCount;
+    -webkit-box-orient: vertical;
+    line-height: $lineHeight;
+    max-height: $lineHeight * $lineCount;
+
+  } @else {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+/// Automatically color the text according to the $bgColor
+/// @param  {color} $bgColor Background color of the current Tag
+/// @example scss - text-contrast mixin
+///   text-contrast(#ccc)
+/// @since v-1.0.0
+/// @author Guillaume TURPIN
+/// @output add color: with the according color
+@mixin text-contrast($bgColor) {
+  $color-brightness: round((red($bgColor) * 299) + (green($bgColor) * 587) + (blue($bgColor) * 114) / 1000);
+  $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+
+  @if abs($color-brightness) < ($light-color/2) {
+    color: white;
+  } @else {
+    color: black;
+  }
+}
+
+/// alias of text-contrast but just returning the value instead of display the color
+/// @param  {color} $bgColor Background color of the current Tag
+/// @example scss - get-text-contrast function
+///   get-text-contrast(#ccc)
+/// @since v-1.0.0
+/// @return {color} The value according to the $bgColor
+@function get-text-contrast($bgColor) {
+  $color-brightness: round((red($bgColor) * 299) + (green($bgColor) * 587) + (blue($bgColor) * 114) / 1000);
+  $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+
+  @if abs($color-brightness) < ($light-color/2) {
+    @return white;
+  }
+
+  @else {
+    @return black;
+  }
+}

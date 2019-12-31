@@ -1,0 +1,25 @@
+/// return the content under the breakpoint param
+/// @param {number} $size the breakpoint
+/// @output {content} content to add
+/// @require {mixin} strip-unit - to call mixin without unit
+/// @example scss - above mixin
+///   under(1200) { display: block; }
+/// @author Guillaume TURPIN
+/// @since v-1.0.1
+@mixin under($size) {
+  $size: strip-unit($size);
+  @media (max-width: $size + 1px) { @content; }
+}
+
+/// return the content above the breakpoint param
+/// @param {number} $size the breakpoint
+/// @output {content} content to add
+/// @require {mixin} strip-unit - to call mixin without unit
+/// @example scss - above mixin
+///   above(1200) { display: block; }
+/// @author Guillaume TURPIN
+/// @since v-1.0.1
+@mixin above($size) {
+  $size: strip-unit($size);
+  @media (min-width: $size + 1px) { @content; }
+}

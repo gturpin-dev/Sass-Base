@@ -1,14 +1,7 @@
-/// Call a css variable faster by calling v(name);
-/// @param  {variable} $var variable css
-/// @return {variable}      css Variable
-@function v($var) {
-  @return var(--#{$var});
-}
-
 // Main fonts
 @import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
-$font-primary: 'Cabin', sans-serif !default;
-$font-secondary: 'Monserrat', sans-serif !default;
+$font-primary: 'Monserrat', sans-serif !default;
+$font-secondary: 'Cabin', sans-serif !default;
 
 // Main colors
 $color-primary:  #6C63FF !default;
@@ -26,38 +19,3 @@ $theme-colors: (
   "lightgrey":  $color-lightgrey,
   "danger":  $color-danger,
 );
-
-/// array of breakpoints
-/// @type {map}
-$breakpoints: (
-  'tablet-paysage': 992px,
-  'tablet-portrait': 768px,
-  'mobile': 568px
-);
-
-/// Remove the unit of a length
-/// @param {Number} $number - Number to remove unit from
-/// @return {Number} - Unitless number
-@function strip-unit($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
-  }
-
-  @return $number;
-}
-
-/// return the content under the breakpoint param
-/// @param {number} $size the breakpoint
-/// @output {content} content to add
-@mixin under($size) {
-  $size: strip-unit($size);
-  @media (max-width: $size + 1px) { @content; }
-}
-
-/// return the content above the breakpoint param
-/// @param {number} $size the breakpoint
-/// @output {content} content to add
-@mixin above($size) {
-  $size: strip-unit($size);
-  @media (min-width: $size + 1px) { @content; }
-}

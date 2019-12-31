@@ -1,0 +1,6 @@
+/// Call a css variable faster by calling v(name);
+/// @param  {variable} $var variable css
+/// @return {variable}      css Variable
+@function v($var) {
+  @return var(--#{$var});
+}

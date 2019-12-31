@@ -8,12 +8,12 @@
 .ovh { overflow: hidden; }
 .ovv { overflow: visible; }
 .ovs { overflow: scroll; }
-.ovxh { overflow: hidden; }
-.ovxv { overflow: visible; }
-.ovxs { overflow: scroll; }
-.ovyh { overflow: hidden; }
-.ovyv { overflow: visible; }
-.ovys { overflow: scroll; }
+.ovxh { overflow-x: hidden; }
+.ovxv { overflow-x: visible; }
+.ovxs { overflow-x: scroll; }
+.ovyh { overflow-y: hidden; }
+.ovyv { overflow-y: visible; }
+.ovys { overflow-y: scroll; }
 
 // cursor
 .cup { cursor: pointer; }

@@ -1,0 +1,37 @@
+/// declare fonts easily
+/// @param {name} name of the font
+/// @param {path} path of the font file
+/// @param {weight} to set the weight font
+/// @param {style} to set the style font, usually italic
+/// @param {exts} extensions available for this font
+/// @require {mixin} str-replace - to replace string
+/// @example scss - font-face mixin
+///   font-face(Samplinal, fonts/Samplinal, 500, normal, eot woff2 woff);
+/// @author Guillaume TURPIN
+/// @since v-1.0.1
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}

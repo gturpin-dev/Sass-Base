@@ -1,0 +1,25 @@
+/// @param  {color} $bgColor main color of the button
+/// @output button with variation of a color
+@mixin button-variant($bgColor) {
+  background-color: $bgColor;
+  border: 1px solid $bgColor;
+  @include text-contrast($bgColor);
+
+  &:hover {
+    background-color: get-text-contrast($bgColor);
+    color: $bgColor;
+  }
+}
+
+/// @param  {color} $bgColor main color of the button
+/// @output button with inverted variation of a color
+@mixin button-variant-invert($bgColor) {
+  border: 1px solid $bgColor;
+  background-color: get-text-contrast($bgColor);
+  color: $bgColor;
+
+  &:hover {
+    background-color: $bgColor;
+    @include text-contrast($bgColor);
+  }
+}

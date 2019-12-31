@@ -1,0 +1,18 @@
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-wrap { white-space: wrap; }
+.text-nowrap { white-space: nowrap; }
+
+.text-excerpt {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@for $i from 1 through 5 {
+  .text-excerpt-#{$i} {
+    @include excerpt-text($lineCount: $i);
+  }
+}
