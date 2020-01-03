@@ -26,13 +26,15 @@ $multiple-spacers: (
 @for $i from 0 through $ending / .25 {
 
   @each $prefix, $rule in $spacers {
-    .#{$prefix}-#{($i * 25)} {
+    .#{$prefix}-#{($i * 25)},
+    .child-#{$prefix}-#{($i * 25)} > * {
       #{$rule}: $i * .25rem !important;
     }
   }
 
   @each $prefix, $rules in $multiple-spacers {
-    .#{$prefix}-#{($i * 25)} {
+    .#{$prefix}-#{($i * 25)},
+    .child-#{$prefix}-#{($i * 25)} > * {
       @each $rule in $rules {
         #{$rule}: $i * .25rem !important;
       }

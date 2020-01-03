@@ -26,8 +26,8 @@ $props: (
 
   @each $prefix, $item in $props {
     .#{$prefix}-#{$val} {
-      #{map-get($item, 'prop')}: $val+#{map-get($item, 'unit')};
-      max-#{map-get($item, 'prop')}: $val+#{map-get($item, 'unit')};
+      #{map-get($item, 'prop')}: $val#{map-get($item, 'unit')};
+      max-#{map-get($item, 'prop')}: $val#{map-get($item, 'unit')};
     }
   }
 }
