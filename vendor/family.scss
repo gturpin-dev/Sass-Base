@@ -213,12 +213,34 @@
   }
 }
 
+
+/// Select all element except the last child
+/// @group no-arguments
+/// @author Guillaume TURPIN
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin all-except-last() {
+  &:not(:last-child) {
+    @content;
+  }
+}
+
+/// Select all element except the first child
+/// @group no-arguments
+/// @author Guillaume TURPIN
+/// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
+@mixin all-except-first() {
+  &:not(:first-child) {
+    @content;
+  }
+}
+
+
 /// Select the first exact child
 /// @group no-arguments
 /// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
 @mixin first-child() {
   &:first-of-type {
-    @content
+    @content;
   }
 }
 
@@ -227,7 +249,7 @@
 /// @content [Write the style you want to apply to the children, and it will be added within the @content directive]
 @mixin last-child() {
   &:last-of-type {
-    @content
+    @content;
   }
 }
 
