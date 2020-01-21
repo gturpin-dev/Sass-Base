@@ -36,9 +36,9 @@
   $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
 
   @if abs($color-brightness) < ($light-color/2) {
-    color: white;
+    color: white !important;
   } @else {
-    color: black;
+    color: black !important;
   }
 }
 
@@ -53,10 +53,10 @@
   $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
 
   @if abs($color-brightness) < ($light-color/2) {
-    @return white;
+    @return white !important;
   }
 
   @else {
-    @return black;
+    @return black !important;
   }
 }

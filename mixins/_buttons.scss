@@ -1,25 +1,25 @@
 /// @param  {color} $bgColor main color of the button
 /// @output button with variation of a color
 @mixin button-variant($bgColor) {
-  background-color: $bgColor;
-  border: 1px solid $bgColor;
+  background-color: $bgColor !important;
+  border: 1px solid $bgColor !important;
   @include text-contrast($bgColor);
 
   &:hover {
-    background-color: get-text-contrast($bgColor);
-    color: $bgColor;
+    background-color: get-text-contrast($bgColor) !important;
+    color: $bgColor !important;
   }
 }
 
 /// @param  {color} $bgColor main color of the button
 /// @output button with inverted variation of a color
 @mixin button-variant-invert($bgColor) {
-  border: 1px solid $bgColor;
-  background-color: get-text-contrast($bgColor);
-  color: $bgColor;
+  border: 1px solid $bgColor !important;
+  background-color: get-text-contrast($bgColor) !important;
+  color: $bgColor !important;
 
   &:hover {
-    background-color: $bgColor;
+    background-color: $bgColor !important;
     @include text-contrast($bgColor);
   }
 }

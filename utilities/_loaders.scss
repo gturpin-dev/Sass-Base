@@ -1,3 +1,5 @@
+/// default placeholder
+/// ============================
 %spinner {
   display: inline-block;
   color: inherit;
@@ -5,9 +7,9 @@
   pointer-events: none;
 }
 
-//////////////////////////////
-///// Template animation /////
-//////////////////////////////
+/// Template animation
+/// ============================
+
 // use any of these placeholder in $animation to use it
 %classic {
   border: .2em solid currentcolor;
@@ -17,7 +19,7 @@
   position: relative;
 }
 
-%classic-bcg {
+%classic-bg {
 	border: .2em solid transparent;
 	border-top-color: currentcolor;
 	border-radius: 50%;
@@ -45,13 +47,16 @@
   border-radius: 50%;
   animation: 1s spin linear infinite;
 }
-//////////////////////////////////
-///// END Template animation /////
-//////////////////////////////////
+/// End Template animation
+/// ============================
 
 /// @param  {number} $size      [1em]         size of spinner
 /// @param  {color}  $color     [#000]        color of snipper
 /// @param  {string} $animation ['classic']   name of placeholder animation
+/// @example scss - spinner mixin
+///   spinner($animation: 'classic-fit');
+/// @author Guillaume TURPIN
+/// @since v-1.0.0
 /// @output a spinner which can be use like a loader
 @mixin spinner($size: 1em, $color: #000, $animation: 'classic') {
   @extend %spinner;
@@ -68,4 +73,18 @@
 	100% {
 		transform: rotate(360deg);
 	}
+}
+
+/// class declaration
+/// ============================
+$spinners: (
+  'classic',
+  'classic-bg',
+  'classic-fit',
+);
+
+@each $spinner in $spinners {
+  .#{$spinner} {
+    @include spinner(1em, currentColor, $spinner);
+  }
 }

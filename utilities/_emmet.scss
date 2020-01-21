@@ -1,47 +1,47 @@
 // Emmet abbreviation in classes
 
 // position
-.posa { position: absolute; }
-.posr { position: relative; }
+.posa { position: absolute !important; }
+.posr { position: relative !important; }
 
 // overflow
-.ovh { overflow: hidden; }
-.ovv { overflow: visible; }
-.ovs { overflow: scroll; }
-.ovxh { overflow-x: hidden; }
-.ovxv { overflow-x: visible; }
-.ovxs { overflow-x: scroll; }
-.ovyh { overflow-y: hidden; }
-.ovyv { overflow-y: visible; }
-.ovys { overflow-y: scroll; }
+.ovh { overflow: hidden !important; }
+.ovv { overflow: visible !important; }
+.ovs { overflow: scroll !important; }
+.ovxh { overflow-x: hidden !important; }
+.ovxv { overflow-x: visible !important; }
+.ovxs { overflow-x: scroll !important; }
+.ovyh { overflow-y: hidden !important; }
+.ovyv { overflow-y: visible !important; }
+.ovys { overflow-y: scroll !important; }
 
 // cursor
-.cup { cursor: pointer; }
+.cup { cursor: pointer !important; }
 
 // font
-.fwb { font-weight: bold; }
-.fsi { font-style: italic; }
+.fwb { font-weight: bold !important; }
+.fsi { font-style: italic !important; }
 
 // text
-.vab { vertical-align: bottom; }
-.vat { vertical-align: top; }
-.vam { vertical-align: middle; }
+.vab { vertical-align: bottom !important; }
+.vat { vertical-align: top !important; }
+.vam { vertical-align: middle !important; }
 
-.tac { text-align: center; }
-.tar { text-align: right; }
-.tal { text-align: left; }
+.tac { text-align: center !important; }
+.tar { text-align: right !important; }
+.tal { text-align: left !important; }
 
-.tdn { text-decoration: none; }
-.tdu { text-decoration: underline; }
+.tdn { text-decoration: none !important; }
+.tdu { text-decoration: underline !important; }
 
-.ttu { text-transform: uppercase; }
-.ttc { text-transform: capitalize; }
-.ttn { text-transform: none; }
-.ttl { text-transform: lowercase; }
+.ttu { text-transform: uppercase !important; }
+.ttc { text-transform: capitalize !important; }
+.ttn { text-transform: none !important; }
+.ttl { text-transform: lowercase !important; }
 
-.whsnw { white-space: nowrap; }
+.whsnw { white-space: nowrap !important; }
 
-.oln { outline: none; }
+.oln { outline: none !important; }
 
 // list
-.lisn { list-style: none; }
+.lisn { list-style: none !important; }

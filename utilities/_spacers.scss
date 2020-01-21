@@ -1,6 +1,4 @@
-// m-100 = margin: 1.00rem
-
-// step = .25rem
+// range from 0rem to $ending rem
 $ending: 5; // 5rem
 
 $spacers: (
@@ -23,10 +21,11 @@ $multiple-spacers: (
   "py": ["padding-top", "padding-bottom"],
 );
 
+/// classic + multiple spacers
+/// ============================
 @for $i from 0 through $ending / .25 {
 
   @each $prefix, $rule in $spacers {
-    .#{$prefix}-auto { #{$rule}: auto; }
     .#{$prefix}-#{($i * 25)},
     .child-#{$prefix}-#{($i * 25)} > * {
       #{$rule}: $i * .25rem !important;
@@ -37,9 +36,20 @@ $multiple-spacers: (
     .#{$prefix}-#{($i * 25)},
     .child-#{$prefix}-#{($i * 25)} > * {
       @each $rule in $rules {
-        .#{$prefix}-auto { #{$rule}: auto; }
         #{$rule}: $i * .25rem !important;
       }
     } // end prefix
   } // endeach
+}
+
+/// auto spacers
+/// ============================
+@each $prefix, $rule in $spacers {
+  .#{$prefix}-auto { #{$rule}: auto !important; }
+}
+
+@each $prefix, $rules in $multiple-spacers {
+  @each $rule in $rules {
+    .#{$prefix}-auto { #{$rule}: auto !important; }
+  }
 }

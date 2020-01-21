@@ -1,21 +1,22 @@
 // Main fonts
 @import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
-$font-primary: 'Monserrat', sans-serif !default;
-$font-secondary: 'Cabin', sans-serif !default;
+$font-primary: 'Monserrat', sans-serif !default; // font for title
+$font-secondary: 'Cabin', sans-serif !default;   // font for text
 
-// Main colors
-$color-primary:  #6C63FF !default;
-$color-secondary:  #4285F4 !default;
+/// Default colors, feel free to override them
+/// ============================
+$color-primary:  #007ace !default;
+$color-secondary:  #38b2ac !default;
 $color-grey:  #4A4A4A !default;
 $color-lightgrey: #737373 !default;
 $color-danger: #D23737 !default;
 
-/// array of main colors
-/// @type {map}
+/// Theme color, feel free to add your own, it will generate every class in heritance
+/// ============================
 $theme-colors: (
-  "primary":    $color-primary,
-  "secondary":  $color-secondary,
-  "grey":  $color-grey,
-  "lightgrey":  $color-lightgrey,
-  "danger":  $color-danger,
+  "primary":    $color-primary,    // primary color of website
+  "secondary":  $color-secondary,  // secondary color of website
+  "grey":  $color-grey,            // color for more important text
+  "lightgrey":  $color-lightgrey,  // color for less important text
+  "danger":  $color-danger,        // color for alerts or something dangerous
 );

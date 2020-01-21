@@ -1,6 +1,0 @@
-// adding font-size classes
-@for $i from 10 through 20 {
-  .fs-#{$i} {
-    font-size: $i !important;
-  }
-}
