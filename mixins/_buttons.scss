@@ -1,25 +1,42 @@
 /// @param  {color} $bgColor main color of the button
-/// @output button with variation of a color
-@mixin button-variant($bgColor) {
-  background-color: $bgColor !important;
-  border: 1px solid $bgColor !important;
+/// @author Guillaume TURPIN
+/// @since v-2.0.2
+/// @output button with variation of the color
+@mixin button-outlined-variant($bgColor) {
+  background-color: $bgColor;
+  border: 1px solid $bgColor;
   @include text-contrast($bgColor);
 
   &:hover {
-    background-color: get-text-contrast($bgColor) !important;
-    color: $bgColor !important;
+    background-color: transparent;
+    color: $bgColor;
   }
 }
 
 /// @param  {color} $bgColor main color of the button
-/// @output button with inverted variation of a color
+/// @author Guillaume TURPIN
+/// @since v-2.0.2
+/// @output button with inverted variation of the color
 @mixin button-variant-invert($bgColor) {
-  border: 1px solid $bgColor !important;
-  background-color: get-text-contrast($bgColor) !important;
-  color: $bgColor !important;
+  border: 1px solid $bgColor;
+  background-color: transparent;
+  color: $bgColor;
 
   &:hover {
-    background-color: $bgColor !important;
+    background-color: $bgColor;
     @include text-contrast($bgColor);
+  }
+}
+
+/// @param  {color} $bgColor main color of the button
+/// @author Guillaume TURPIN
+/// @since v-2.0.2
+/// @output button with darken color
+@mixin button-variant($bgColor, $amount: 15%) {
+  background-color: $bgColor;
+  @include text-contrast($bgColor);
+
+  &:hover {
+    background-color: darken($bgColor, $amount);
   }
 }

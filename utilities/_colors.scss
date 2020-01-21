@@ -1,4 +1,5 @@
-// colors
+/// colors and background
+/// ============================
 @each $name, $color in $theme-colors {
   .color-#{$name} {
     color: $color !important;

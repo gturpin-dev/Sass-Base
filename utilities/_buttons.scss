@@ -1,5 +1,5 @@
 %btn {
-  padding: .5em 2em !important;
+  padding: .5em 2em;
   text-decoration: none !important;
   user-select: none !important;
   outline: none !important;
@@ -12,6 +12,11 @@
   .button-#{$color} {
     @extend %btn;
     @include button-variant($value);
+  }
+
+  .button-outlined-#{$color} {
+    @extend %btn;
+    @include button-outlined-variant($value);
   }
 
   .button-invert-#{$color} {

@@ -1,0 +1,24 @@
+/// base of image container
+/// ============================
+%img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+/// images class
+/// ============================
+.img-fluid {
+  @extend %img;
+}
+
+.img-contain {
+  @extend %img;
+  object-fit: contain !important;
+}
+
+.img-cover {
+  @extend %img;
+  object-fit: cover !important;
+}
