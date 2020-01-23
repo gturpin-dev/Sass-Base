@@ -13,7 +13,7 @@ $color-danger: #D23737 !default;
 
 /// Theme color, feel free to add your own, it will generate every class in heritance
 /// ============================
-$theme-colors: (
+$user-colors: (
   "primary":    $color-primary,    // primary color of website
   "secondary":  $color-secondary,  // secondary color of website
   "grey":  $color-grey,            // color for more important text

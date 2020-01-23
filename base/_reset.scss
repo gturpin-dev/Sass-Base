@@ -49,6 +49,11 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
+/* A elements that have a class get default styles */
+a[class] {
+  text-decoration: none;
+}
+
 /* Make images easier to work with */
 img {
   max-width: 100%;

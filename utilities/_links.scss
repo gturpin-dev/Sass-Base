@@ -1,75 +1,12 @@
-.classic-link {
-  color: #fff !important;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-// TODO: WIP | to deploy
-/// link-curtain
+/// Creating links from mixins
 /// ============================
-.link-curtain {
-	background: transparent;
+@each $name, $color in $user-colors {
+  .link-classic-#{$name} { @include link-classic($color); }
+  .link-bg-bottom-top-#{$name} { @include link-bg-bottom-top($color); }
 
-  a {
-  text-decoration: none;
-  display: inline-block;
-	overflow: hidden;
-	font-weight: 500;
-	color: #28262b;
-  position: relative;
-  vertical-align: bottom;
-  white-space: nowrap;
+  .link-full-left-right-#{$name} { @include link-full-left-right($color); }
+  .link-full-right-left-#{$name} { @include link-full-right-left($color); }
 
-    &:hover{
-      color: #28262b;
-
-      &:after,
-      &:before {
-	      transform: translateX(0);
-      }
-
-      &:before {
-      transition-delay: 0s;
-      }
-
-      &:after{
-	transition-delay: 0.3s;
-      }
-    }
-
-    &:after,
-    &:before {
-      	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 90%;
-	content: '';
-	transition: transform 0.3s;
-    }
-
-    &:before {
-      	border-top: 2px solid #9f8465;
-	background: transparent;
-	transition-delay: 0.3s;
-	transform: translateY( calc(100% - 2px) );
-    }
-
-    &:after {
-      	z-index: -1;
-	background: #c39f76;
-	transform: translateY(-100%);
-    }
-  }
+  .link-empty-left-right-#{$name} { @include link-empty-left-right($color); }
+  .link-empty-right-left-#{$name} { @include link-empty-right-left($color); }
 }
-
-.link-curtain a:hover::after,
-.link-curtain a:focus::after {
-	-webkit-transition-delay: 0.3s;
-	transition-delay: 0.3s;
-}
-/// end
-/// ============================

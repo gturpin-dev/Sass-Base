@@ -29,8 +29,8 @@ $props: (
   @each $prefix, $item in $props {
     .#{$prefix}-#{$val},
     .child-#{$prefix}-#{$val} > * {
-      #{map-get($item, 'prop')}: $val + #{map-get($item, 'unit')};
-      max-#{map-get($item, 'prop')}: $val + #{map-get($item, 'unit')};
+      #{map-get($item, 'prop')}: $val * 1#{map-get($item, 'unit')};
+      max-#{map-get($item, 'prop')}: $val * 1#{map-get($item, 'unit')};
     }
   }
 }
@@ -41,7 +41,7 @@ $props: (
   .#{$prefix}-auto,
   .child-#{$prefix}-auto > * {
     #{map-get($item, 'prop')}: auto;
-    max-#{map-get($item, 'prop')}: 100 + #{map-get($item, 'unit')};
+    max-#{map-get($item, 'prop')}: 100 * 1#{map-get($item, 'unit')};
   }
 }
 
