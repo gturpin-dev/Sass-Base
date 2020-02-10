@@ -19,7 +19,7 @@
 /// ============================
 $range-text-excerpt: (1, 5);
 $range-line-height: (10, 30);
-$range-font-size: (10, 20);
+$range-font-size: (10, 40);
 
 /// excerpt text
 /// ============================
@@ -41,6 +41,6 @@ $range-font-size: (10, 20);
 /// ============================
 @for $i from nth($range-font-size, 1) through nth($range-font-size, 2) {
   .fs-#{$i} {
-    font-size: $i !important;
+    font-size: #{$i}px !important;
   }
 }
