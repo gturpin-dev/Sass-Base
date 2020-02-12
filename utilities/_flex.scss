@@ -29,6 +29,12 @@
 .align-between { align-items: space-between !important; }
 .align-around { align-items: space-around !important; }
 
+.content-center { align-content: center !important; }
+.content-start { align-content: flex-start !important; }
+.content-end { align-content: flex-end !important; }
+.content-between { align-content: space-between !important; }
+.content-around { align-content: space-around !important; }
+
 .self-center { align-self: center !important; }
 .self-start { align-self: flex-start !important; }
 .self-end { align-self: flex-end !important; }
