@@ -14,8 +14,13 @@ $container-breakpoints: (
 
   @each $breakpoint, $container-value in $container-breakpoints {
     @include above($breakpoint) {
-      padding-left: calc(50% - #{$container-value} / 2);
-      padding-right: calc(50% - #{$container-value} / 2);
+      @if $breakpoint == 0 {
+        padding-left: 5px;
+        padding-right: 5px;
+      } @else {
+        padding-left: calc((50% - #{$container-value} / 2));
+        padding-right: calc((50% - #{$container-value} / 2));
+      }
     }
   }
 }
@@ -28,7 +33,11 @@ $container-breakpoints: (
 
   @each $breakpoint, $container-value in $container-breakpoints {
     @include above($breakpoint) {
-      max-width: $container-value;
+      @if $breakpoint == 0 {
+        max-width: calc(100% - 10px);
+      } @else {
+        max-width: $container-value;
+      }
     }
   }
 }
