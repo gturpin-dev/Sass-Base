@@ -1,54 +1,41 @@
 // step for value
-$step: 25; // 25%
+$step: 25; // 25%, must be multiple of 100 to keep this usefull value
 $ending: 100; // 100%, useless to go further
 
-$props: (
-  "w": (
-    "prop": width,
-    "unit": '%',
-  ),
-  "h": (
-    "prop": height,
-    "unit": '%',
-  ),
-  "vw": (
-    "prop": width,
-    "unit": 'vw',
-  ),
-  "vh": (
-    "prop": height,
-    "unit": 'vh',
-  ),
+$sizes: (
+  'w': width,
+  'h': height,
 );
 
-/// classic sizing
-/// ============================
-@for $i from 0 through $ending/$step {
-  $val: $i * $step;
+@each $bp-name, $breakpoint in $breakpoints {
+  @include under($breakpoint) {
+    /// classic sizing
+    /// ============================
+    @for $i from 0 through $ending/$step {
+      $val: $i * $step;
 
-  @each $prefix, $item in $props {
-    .#{$prefix}-#{$val},
-    .child-#{$prefix}-#{$val} > * {
-      #{map-get($item, 'prop')}: $val * 1#{map-get($item, 'unit')};
-      max-#{map-get($item, 'prop')}: $val * 1#{map-get($item, 'unit')};
-    }
+      @each $prefix, $prop in $sizes {
+        .#{$bp-name}\:#{$prefix}-#{$val},
+        .#{$bp-name}\:child-#{$prefix}-#{$val} > * {
+          #{$prop}: $val * 1%;
+          max-#{$prop}: $val * 1%;
+        }
+      } // endeach
+    } // endfor
+
+    /// auto sizing
+    /// ============================
+    @each $prefix, $prop in $sizes {
+      .#{$bp-name}\:#{$prefix}-auto,
+      .#{$bp-name}\:child-#{$prefix}-auto > * {
+        #{$prop}: auto;
+        max-#{$prop}: 100%;
+      }
+    } // endeach
   }
 }
 
-/// auto sizing
+/// Additionnal helpers
 /// ============================
-@each $prefix, $item in $props {
-  .#{$prefix}-auto,
-  .child-#{$prefix}-auto > * {
-    #{map-get($item, 'prop')}: auto;
-    max-#{map-get($item, 'prop')}: 100 * 1#{map-get($item, 'unit')};
-  }
-}
-
-/// extend items
-/// ============================
-.noextend,
-.child-noextend > * {
-  width: min-content;
-  white-space: nowrap;
-}
+.vw-100 { width: 100vw !important; }
+.vh-100 { height: 100vh !important; }

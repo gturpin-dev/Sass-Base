@@ -4,7 +4,7 @@
 .text-left { text-align: left !important; }
 .text-right { text-align: right !important; }
 
-/// white space
+/// white-space
 /// ============================
 .text-wrap { white-space: wrap !important; }
 .text-nowrap { white-space: nowrap !important; }
@@ -13,6 +13,14 @@
   overflow: hidden !important;
   text-overflow: ellipsis !important;
   white-space: nowrap !important;
+}
+
+/// extend items
+/// ============================
+.noextend,
+.child-noextend > * {
+  width: min-content;
+  white-space: nowrap;
 }
 
 /// range of utilities class
