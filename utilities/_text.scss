@@ -32,7 +32,7 @@ $range-font-size: (10, 40);
 /// excerpt text
 /// ============================
 @for $i from nth($range-text-excerpt, 1) through nth($range-text-excerpt, 2) {
-  .text-excerpt-#{$i} {
+  .excerpt-text-#{$i} {
     @include excerpt-text($lineCount: $i);
   }
 }

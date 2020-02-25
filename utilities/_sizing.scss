@@ -7,6 +7,8 @@ $sizes: (
   'h': height,
 );
 
+/// Responsive class
+/// ============================
 @each $bp-name, $breakpoint in $breakpoints {
   @include under($breakpoint) {
     /// classic sizing
@@ -34,6 +36,30 @@ $sizes: (
     } // endeach
   }
 }
+
+/// General class
+/// ============================
+@for $i from 0 through $ending/$step {
+  $val: $i * $step;
+
+  @each $prefix, $prop in $sizes {
+    .#{$prefix}-#{$val},
+    .child-#{$prefix}-#{$val} > * {
+      #{$prop}: $val * 1%;
+      max-#{$prop}: $val * 1%;
+    }
+  } // endeach
+} // endfor
+
+/// auto sizing
+/// ============================
+@each $prefix, $prop in $sizes {
+  .#{$prefix}-auto,
+  .child-#{$prefix}-auto > * {
+    #{$prop}: auto;
+    max-#{$prop}: 100%;
+  }
+} // endeach
 
 /// Additionnal helpers
 /// ============================

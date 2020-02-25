@@ -1,5 +1,5 @@
-// Emmet abbreviation in classes
-
+/// Responsive Emmet abbreviation in classes
+/// ============================
 @each $bp-name, $breakpoint in $breakpoints {
   @include under($breakpoint) {
     /// Position
@@ -56,3 +56,57 @@
     .#{$bp-name}\:lisn { list-style: none !important; }
   }
 }
+
+/// General Class
+/// Position
+/// ============================
+.posa { position: absolute !important; }
+.posr { position: relative !important; }
+
+/// Overflow
+/// ============================
+.ovh { overflow: hidden !important; }
+.ovv { overflow: visible !important; }
+.ovs { overflow: scroll !important; }
+.ovxh { overflow-x: hidden !important; }
+.ovxv { overflow-x: visible !important; }
+.ovxs { overflow-x: scroll !important; }
+.ovyh { overflow-y: hidden !important; }
+.ovyv { overflow-y: visible !important; }
+.ovys { overflow-y: scroll !important; }
+
+/// Cursor
+/// ============================
+.cup { cursor: pointer !important; }
+
+/// Fonts
+/// ============================
+.fwb { font-weight: bold !important; }
+.fwn { font-weight: normal !important; }
+.fsi { font-style: italic !important; }
+
+/// Text
+/// ============================
+.vab { vertical-align: bottom !important; }
+.vat { vertical-align: top !important; }
+.vam { vertical-align: middle !important; }
+
+.tac { text-align: center !important; }
+.tar { text-align: right !important; }
+.tal { text-align: left !important; }
+
+.tdn { text-decoration: none !important; }
+.tdu { text-decoration: underline !important; }
+
+.ttu { text-transform: uppercase !important; }
+.ttc { text-transform: capitalize !important; }
+.ttn { text-transform: none !important; }
+.ttl { text-transform: lowercase !important; }
+
+.whsnw { white-space: nowrap !important; }
+
+.oln { outline: none !important; }
+
+/// List
+/// ============================
+.lisn { list-style: none !important; }
