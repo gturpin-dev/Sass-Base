@@ -8,7 +8,7 @@
 }
 
 // Creates a button with variation of each color in $theme-colors
-@each $color, $value in $theme-colors {
+@each $color, $value in $user-colors {
   .button-#{$color} {
     @extend %btn;
     @include button-variant($value);

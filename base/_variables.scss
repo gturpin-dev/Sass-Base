@@ -1,6 +1,6 @@
 // Main fonts
-@import url('https://fonts.googleapis.com/css?family=Cabin&display=swap');
-$font-primary: 'Monserrat', sans-serif !default; // font for title
+@import url('https://fonts.googleapis.com/css?family=Cabin|BioRhyme:400,700&display=swap');
+$font-primary: 'BioRhyme', sans-serif !default; // font for title
 $font-secondary: 'Cabin', sans-serif !default;   // font for text
 
 /// Default colors, feel free to override them
@@ -23,3 +23,12 @@ $user-colors: (
   /// 'yellow-1': map-get($color-palet, 'yellow-1'),
   /// ============================
 );
+
+/// Breakpoints for generates utilities responsive class
+/// ============================
+$breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+) !default;

@@ -7,6 +7,7 @@ $container-breakpoints: (
   992: 960px,
   1200: 1140px
 ) !default;
+$container-gap: 5px;
 
 .container-padding {
   box-sizing: border-box;
@@ -15,8 +16,8 @@ $container-breakpoints: (
   @each $breakpoint, $container-value in $container-breakpoints {
     @include above($breakpoint) {
       @if $breakpoint == 0 {
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: $container-gap;
+        padding-right: $container-gap;
       } @else {
         padding-left: calc((50% - #{$container-value} / 2));
         padding-right: calc((50% - #{$container-value} / 2));
@@ -34,7 +35,7 @@ $container-breakpoints: (
   @each $breakpoint, $container-value in $container-breakpoints {
     @include above($breakpoint) {
       @if $breakpoint == 0 {
-        max-width: calc(100% - 10px);
+        max-width: calc(100% - #{$container-gap} * 2);
       } @else {
         max-width: $container-value;
       }
