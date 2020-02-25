@@ -1,3 +1,9 @@
+/// range of utilities class
+/// ============================
+$range-text-excerpt: (1, 5);
+$range-line-height: (10, 30);
+$range-font-size: (10, 40);
+
 /// text align
 /// ============================
 .text-center { text-align: center !important; }
@@ -23,13 +29,37 @@
   white-space: nowrap;
 }
 
-/// range of utilities class
+/// Responsive Class
 /// ============================
-$range-text-excerpt: (1, 5);
-$range-line-height: (10, 30);
-$range-font-size: (10, 40);
+@each $bp-name, $breakpoint in $breakpoints {
+  @include under($breakpoint) {
+    /// excerpt text
+    /// ============================
+    @for $i from nth($range-text-excerpt, 1) through nth($range-text-excerpt, 2) {
+      .#{$bp-name}\:excerpt-text-#{$i} {
+        @include excerpt-text($lineCount: $i);
+      }
+    }
 
-/// excerpt text
+    /// line-height
+    /// ============================
+    @for $i from nth($range-line-height, 1) through nth($range-line-height, 2) {
+      .#{$bp-name}\:lh-#{$i} {
+        line-height: $i/10 !important;
+      }
+    }
+
+    /// font size
+    /// ============================
+    @for $i from nth($range-font-size, 1) through nth($range-font-size, 2) {
+      .#{$bp-name}\:fs-#{$i} {
+        font-size: #{$i}px !important;
+      }
+    }
+  }
+}
+
+/// General excerpt text class
 /// ============================
 @for $i from nth($range-text-excerpt, 1) through nth($range-text-excerpt, 2) {
   .excerpt-text-#{$i} {
