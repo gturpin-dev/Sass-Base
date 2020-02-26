@@ -7,18 +7,17 @@ $sizes: (
   'h': height,
 );
 
-/// Responsive class
-/// ============================
 @each $bp-name, $breakpoint in $breakpoints {
-  @include under($breakpoint) {
+  @include above($breakpoint) {
+    $infix: infix($bp-name, $breakpoints);
     /// classic sizing
     /// ============================
     @for $i from 0 through $ending/$step {
       $val: $i * $step;
 
       @each $prefix, $prop in $sizes {
-        .#{$bp-name}\:#{$prefix}-#{$val},
-        .#{$bp-name}\:child-#{$prefix}-#{$val} > * {
+        .#{$infix}#{$prefix}-#{$val},
+        .#{$infix}child-#{$prefix}-#{$val} > * {
           #{$prop}: $val * 1%;
           max-#{$prop}: $val * 1%;
         }
@@ -28,38 +27,14 @@ $sizes: (
     /// auto sizing
     /// ============================
     @each $prefix, $prop in $sizes {
-      .#{$bp-name}\:#{$prefix}-auto,
-      .#{$bp-name}\:child-#{$prefix}-auto > * {
+      .#{$infix}#{$prefix}-auto,
+      .#{$infix}child-#{$prefix}-auto > * {
         #{$prop}: auto;
         max-#{$prop}: 100%;
       }
     } // endeach
   }
 }
-
-/// General class
-/// ============================
-@for $i from 0 through $ending/$step {
-  $val: $i * $step;
-
-  @each $prefix, $prop in $sizes {
-    .#{$prefix}-#{$val},
-    .child-#{$prefix}-#{$val} > * {
-      #{$prop}: $val * 1%;
-      max-#{$prop}: $val * 1%;
-    }
-  } // endeach
-} // endfor
-
-/// auto sizing
-/// ============================
-@each $prefix, $prop in $sizes {
-  .#{$prefix}-auto,
-  .child-#{$prefix}-auto > * {
-    #{$prop}: auto;
-    max-#{$prop}: 100%;
-  }
-} // endeach
 
 /// Additionnal helpers
 /// ============================

@@ -4,12 +4,6 @@ $range-text-excerpt: (1, 5);
 $range-line-height: (10, 30);
 $range-font-size: (10, 40);
 
-/// text align
-/// ============================
-.text-center { text-align: center !important; }
-.text-left { text-align: left !important; }
-.text-right { text-align: right !important; }
-
 /// white-space
 /// ============================
 .text-wrap { white-space: wrap !important; }
@@ -29,14 +23,19 @@ $range-font-size: (10, 40);
   white-space: nowrap;
 }
 
-/// Responsive Class
-/// ============================
 @each $bp-name, $breakpoint in $breakpoints {
-  @include under($breakpoint) {
+  @include above($breakpoint) {
+    $infix: infix($bp-name, $breakpoints);
+    /// text align
+    /// ============================
+    .#{$infix}text-center { text-align: center !important; }
+    .#{$infix}text-left { text-align: left !important; }
+    .#{$infix}text-right { text-align: right !important; }
+
     /// excerpt text
     /// ============================
     @for $i from nth($range-text-excerpt, 1) through nth($range-text-excerpt, 2) {
-      .#{$bp-name}\:excerpt-text-#{$i} {
+      .#{$infix}excerpt-text-#{$i} {
         @include excerpt-text($lineCount: $i);
       }
     }
@@ -44,7 +43,7 @@ $range-font-size: (10, 40);
     /// line-height
     /// ============================
     @for $i from nth($range-line-height, 1) through nth($range-line-height, 2) {
-      .#{$bp-name}\:lh-#{$i} {
+      .#{$infix}lh-#{$i} {
         line-height: $i/10 !important;
       }
     }
@@ -52,33 +51,9 @@ $range-font-size: (10, 40);
     /// font size
     /// ============================
     @for $i from nth($range-font-size, 1) through nth($range-font-size, 2) {
-      .#{$bp-name}\:fs-#{$i} {
+      .#{$infix}fs-#{$i} {
         font-size: #{$i}px !important;
       }
     }
-  }
-}
-
-/// General excerpt text class
-/// ============================
-@for $i from nth($range-text-excerpt, 1) through nth($range-text-excerpt, 2) {
-  .excerpt-text-#{$i} {
-    @include excerpt-text($lineCount: $i);
-  }
-}
-
-/// line-height
-/// ============================
-@for $i from nth($range-line-height, 1) through nth($range-line-height, 2) {
-  .lh-#{$i} {
-    line-height: $i/10 !important;
-  }
-}
-
-/// font size
-/// ============================
-@for $i from nth($range-font-size, 1) through nth($range-font-size, 2) {
-  .fs-#{$i} {
-    font-size: #{$i}px !important;
   }
 }

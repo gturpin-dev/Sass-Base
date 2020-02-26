@@ -8,11 +8,10 @@ $displays: (
 );
 
 @each $name, $value in $displays {
-  .d-#{$name} { display: $value !important; }
-
   @each $bp-name, $breakpoint in $breakpoints {
-    @include under($breakpoint) {
-      .#{$bp-name}\:d-#{$name} { display: $value !important; }
+    @include above($breakpoint) {
+      $infix: infix($bp-name, $breakpoints);
+      .#{$infix}d-#{$name} { display: $value !important; }
     }
   }
 }

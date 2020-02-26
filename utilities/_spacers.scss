@@ -21,24 +21,23 @@ $multiple-spacers: (
   "py": ["padding-top", "padding-bottom"],
 );
 
-/// Responsive Class
-/// ============================
 @each $bp-name, $breakpoint in $breakpoints {
-  @include under($breakpoint) {
+  @include above($breakpoint) {
+    $infix: infix($bp-name, $breakpoints);
     /// classic + multiple spacers
     /// ============================
     @for $i from 0 through $ending / .25 {
 
       @each $prefix, $rule in $spacers {
-        .#{$bp-name}\:#{$prefix}-#{($i * 25)},
-        .#{$bp-name}\:child-#{$prefix}-#{($i * 25)} > * {
+        .#{$infix}#{$prefix}-#{($i * 25)},
+        .#{$infix}child-#{$prefix}-#{($i * 25)} > * {
           #{$rule}: $i * .25rem !important;
         }
       }
 
       @each $prefix, $rules in $multiple-spacers {
-        .#{$bp-name}\:#{$prefix}-#{($i * 25)},
-        .#{$bp-name}\:child-#{$prefix}-#{($i * 25)} > * {
+        .#{$infix}#{$prefix}-#{($i * 25)},
+        .#{$infix}child-#{$prefix}-#{($i * 25)} > * {
           @each $rule in $rules {
             #{$rule}: $i * .25rem !important;
           }
@@ -49,47 +48,15 @@ $multiple-spacers: (
     /// auto spacers
     /// ============================
     @each $prefix, $rule in $spacers {
-      .#{$bp-name}\:#{$prefix}-auto { #{$rule}: auto !important; }
+      .#{$infix}#{$prefix}-auto { #{$rule}: auto !important; }
+      .#{$infix}child-#{$prefix}-auto > * { #{$rule}: auto !important; }
     }
 
     @each $prefix, $rules in $multiple-spacers {
       @each $rule in $rules {
-        .#{$bp-name}\:#{$prefix}-auto { #{$rule}: auto !important; }
+        .#{$infix}#{$prefix}-auto { #{$rule}: auto !important; }
+        .#{$infix}child-#{$prefix}-auto > * { #{$rule}: auto !important; }
       }
     }
-  }
-}
-
-/// General Class
-/// classic + multiple spacers
-/// ============================
-@for $i from 0 through $ending / .25 {
-
-  @each $prefix, $rule in $spacers {
-    .#{$prefix}-#{($i * 25)},
-    .child-#{$prefix}-#{($i * 25)} > * {
-      #{$rule}: $i * .25rem !important;
-    }
-  }
-
-  @each $prefix, $rules in $multiple-spacers {
-    .#{$prefix}-#{($i * 25)},
-    .child-#{$prefix}-#{($i * 25)} > * {
-      @each $rule in $rules {
-        #{$rule}: $i * .25rem !important;
-      }
-    } // end prefix
-  } // endeach
-} // endfor
-
-/// auto spacers
-/// ============================
-@each $prefix, $rule in $spacers {
-  .#{$prefix}-auto { #{$rule}: auto !important; }
-}
-
-@each $prefix, $rules in $multiple-spacers {
-  @each $rule in $rules {
-    .#{$prefix}-auto { #{$rule}: auto !important; }
   }
 }

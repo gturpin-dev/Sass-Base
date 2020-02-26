@@ -1,112 +1,59 @@
 /// Responsive Emmet abbreviation in classes
 /// ============================
 @each $bp-name, $breakpoint in $breakpoints {
-  @include under($breakpoint) {
+  @include above($breakpoint) {
+    $infix: infix($bp-name, $breakpoints);
     /// Position
     /// ============================
-    .#{$bp-name}\:posa { position: absolute !important; }
-    .#{$bp-name}\:posr { position: relative !important; }
+    .#{$infix}posa { position: absolute !important; }
+    .#{$infix}posr { position: relative !important; }
 
     /// Overflow
     /// ============================
-    .#{$bp-name}\:ovh { overflow: hidden !important; }
-    .#{$bp-name}\:ovv { overflow: visible !important; }
-    .#{$bp-name}\:ovs { overflow: scroll !important; }
-    .#{$bp-name}\:ovxh { overflow-x: hidden !important; }
-    .#{$bp-name}\:ovxv { overflow-x: visible !important; }
-    .#{$bp-name}\:ovxs { overflow-x: scroll !important; }
-    .#{$bp-name}\:ovyh { overflow-y: hidden !important; }
-    .#{$bp-name}\:ovyv { overflow-y: visible !important; }
-    .#{$bp-name}\:ovys { overflow-y: scroll !important; }
+    .#{$infix}ovh { overflow: hidden !important; }
+    .#{$infix}ovv { overflow: visible !important; }
+    .#{$infix}ovs { overflow: scroll !important; }
+    .#{$infix}ovxh { overflow-x: hidden !important; }
+    .#{$infix}ovxv { overflow-x: visible !important; }
+    .#{$infix}ovxs { overflow-x: scroll !important; }
+    .#{$infix}ovyh { overflow-y: hidden !important; }
+    .#{$infix}ovyv { overflow-y: visible !important; }
+    .#{$infix}ovys { overflow-y: scroll !important; }
 
     /// Cursor
     /// ============================
-    .#{$bp-name}\:cup { cursor: pointer !important; }
+    .#{$infix}cup { cursor: pointer !important; }
 
     /// Fonts
     /// ============================
-    .#{$bp-name}\:fwb { font-weight: bold !important; }
-    .#{$bp-name}\:fwn { font-weight: normal !important; }
-    .#{$bp-name}\:fsi { font-style: italic !important; }
+    .#{$infix}fwb { font-weight: bold !important; }
+    .#{$infix}fwn { font-weight: normal !important; }
+    .#{$infix}fsi { font-style: italic !important; }
 
     /// Text
     /// ============================
-    .#{$bp-name}\:vab { vertical-align: bottom !important; }
-    .#{$bp-name}\:vat { vertical-align: top !important; }
-    .#{$bp-name}\:vam { vertical-align: middle !important; }
+    .#{$infix}vab { vertical-align: bottom !important; }
+    .#{$infix}vat { vertical-align: top !important; }
+    .#{$infix}vam { vertical-align: middle !important; }
 
-    .#{$bp-name}\:tac { text-align: center !important; }
-    .#{$bp-name}\:tar { text-align: right !important; }
-    .#{$bp-name}\:tal { text-align: left !important; }
+    .#{$infix}tac { text-align: center !important; }
+    .#{$infix}tar { text-align: right !important; }
+    .#{$infix}tal { text-align: left !important; }
 
-    .#{$bp-name}\:tdn { text-decoration: none !important; }
-    .#{$bp-name}\:tdu { text-decoration: underline !important; }
+    .#{$infix}tdn { text-decoration: none !important; }
+    .#{$infix}tdu { text-decoration: underline !important; }
 
-    .#{$bp-name}\:ttu { text-transform: uppercase !important; }
-    .#{$bp-name}\:ttc { text-transform: capitalize !important; }
-    .#{$bp-name}\:ttn { text-transform: none !important; }
-    .#{$bp-name}\:ttl { text-transform: lowercase !important; }
+    .#{$infix}ttu { text-transform: uppercase !important; }
+    .#{$infix}ttc { text-transform: capitalize !important; }
+    .#{$infix}ttn { text-transform: none !important; }
+    .#{$infix}ttl { text-transform: lowercase !important; }
 
-    .#{$bp-name}\:whsnw { white-space: nowrap !important; }
+    .#{$infix}whsnw { white-space: nowrap !important; }
 
-    .#{$bp-name}\:oln { outline: none !important; }
+    .#{$infix}oln { outline: none !important; }
 
     /// List
     /// ============================
-    .#{$bp-name}\:lisn { list-style: none !important; }
+    .#{$infix}lisn { list-style: none !important; }
   }
 }
-
-/// General Class
-/// Position
-/// ============================
-.posa { position: absolute !important; }
-.posr { position: relative !important; }
-
-/// Overflow
-/// ============================
-.ovh { overflow: hidden !important; }
-.ovv { overflow: visible !important; }
-.ovs { overflow: scroll !important; }
-.ovxh { overflow-x: hidden !important; }
-.ovxv { overflow-x: visible !important; }
-.ovxs { overflow-x: scroll !important; }
-.ovyh { overflow-y: hidden !important; }
-.ovyv { overflow-y: visible !important; }
-.ovys { overflow-y: scroll !important; }
-
-/// Cursor
-/// ============================
-.cup { cursor: pointer !important; }
-
-/// Fonts
-/// ============================
-.fwb { font-weight: bold !important; }
-.fwn { font-weight: normal !important; }
-.fsi { font-style: italic !important; }
-
-/// Text
-/// ============================
-.vab { vertical-align: bottom !important; }
-.vat { vertical-align: top !important; }
-.vam { vertical-align: middle !important; }
-
-.tac { text-align: center !important; }
-.tar { text-align: right !important; }
-.tal { text-align: left !important; }
-
-.tdn { text-decoration: none !important; }
-.tdu { text-decoration: underline !important; }
-
-.ttu { text-transform: uppercase !important; }
-.ttc { text-transform: capitalize !important; }
-.ttn { text-transform: none !important; }
-.ttl { text-transform: lowercase !important; }
-
-.whsnw { white-space: nowrap !important; }
-
-.oln { outline: none !important; }
-
-/// List
-/// ============================
-.lisn { list-style: none !important; }

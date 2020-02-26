@@ -23,3 +23,20 @@
   $size: strip-unit($size);
   @media (min-width: #{$size}px) { @content; }
 }
+
+/// return blank string for global bp or the bp for others
+/// @param {string} $bp-name the name of the breakpoint
+/// @param {map} $breakpoints array of breakpoints
+/// @example scss - infix mixin
+///   infix(xs, $breakpoints)
+/// @author Guillaume TURPIN
+/// @since v-3.0.1
+@function infix($bp-name, $breakpoints: $breakpoints) {
+  $bp-value: map-get($breakpoints, $bp-name);
+
+  @if ($bp-value != 0) {
+    @return "#{$bp-name}\\:";
+  } @else {
+    @return '';
+  }
+}
