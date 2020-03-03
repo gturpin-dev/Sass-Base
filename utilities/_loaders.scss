@@ -83,8 +83,12 @@ $spinners: (
   'classic-fit',
 );
 
-@each $spinner in $spinners {
-  .#{$spinner} {
-    @include spinner(1em, currentColor, $spinner);
+@each $color, $value in map-merge($user-colors, ('': currentColor)) {
+  @if ($color != '') { $color: '-' + $color; }
+
+  @each $spinner in $spinners {
+    .loader-#{$spinner}#{$color} {
+      @include spinner(1em, $value, $spinner);
+    }
   }
 }
