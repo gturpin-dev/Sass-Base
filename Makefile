@@ -1,4 +1,4 @@
-.PHONY: help dev build watch crawl clean install
+.PHONY: help dev build watch prod install
 
 PORT = 8000
 
@@ -16,8 +16,14 @@ help: ## Affiche cette aide
 dev: ## Lance le serveur de développement
 	php -S localhost:$(PORT) -d display_errors=1
 
-build: ## Compile les assets
-	sass app.scss main.css --style=compressed
+build: install ## Compile les assets
+	yarn dev
 
-watch: ## Compile les assets avec un watcher
-	sass app.scss main.css --watch
+watch: install ## Compile les assets avec un watcher
+	yarn watch
+
+prod: install ## Compile les assets en mode production
+	yarn build
+
+install: package.json ## Installe les dépendances de développement
+	yarn install
