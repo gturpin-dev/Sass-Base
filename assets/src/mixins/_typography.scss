@@ -6,10 +6,10 @@
 /// @param {exts} extensions available for this font
 /// @require {mixin} str-replace - to replace string
 /// @example scss - font-face mixin
-///   font-face(Samplinal, fonts/Samplinal, 500, normal, eot woff2 woff);
+///   fontface('Samplinal', '../fonts/Samplinal-normal', 300, normal);
 /// @author Guillaume TURPIN
 /// @since v-1.0.1
-@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: ttf eot woff2 woff svg) {
 	$src: null;
 
 	$extmods: (
