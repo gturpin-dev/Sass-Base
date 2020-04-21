@@ -9,6 +9,9 @@ $container-breakpoints: (
 ) !default;
 $container-gap: 5px;
 
+
+/// Container set with padding, it allows you to add background
+/// ============================
 .container-padding {
   box-sizing: border-box;
   width: 100%;
@@ -26,6 +29,8 @@ $container-gap: 5px;
   }
 }
 
+/// Container set with margin, it allows you to set additionnal padding
+/// ============================
 .container-margin {
   box-sizing: border-box;
   margin-left: auto;

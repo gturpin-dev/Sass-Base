@@ -55,5 +55,15 @@ $range-font-size: (10, 40);
         font-size: #{$i}px !important;
       }
     }
-  }
-}
+
+    /// font size
+    /// ============================
+    @for $i from 1 through 9 {
+      $i: $i * 100;
+
+      .#{$infix}fw-#{$i} {
+        font-weight: $i !important;
+      }
+    }
+  } // @include above
+} // @each
