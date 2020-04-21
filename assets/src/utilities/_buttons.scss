@@ -7,7 +7,7 @@
   transition: .4s;
 }
 
-// Creates a button with variation of each color in $theme-colors
+// Creates a button with variation of each color in $user-colors
 @each $color, $value in $user-colors {
   .button-#{$color} {
     @extend %btn;
