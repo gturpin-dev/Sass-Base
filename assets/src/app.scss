@@ -7,11 +7,11 @@
 @import 'vendor/gridlex/gridlex'; // http://gridlex.devlint.fr/  | css grid system to quickly create modern layouts and submodules.
 
 // Base
-@import 'base/reset';
-@import 'base/color-palet';
-@import 'base/variables';
-@import 'base/base';
-@import 'base/typography';
+@import 'core/reset';
+@import 'core/color-palet';
+@import 'core/variables';
+@import 'core/base';
+@import 'core/typography';
 
 // Utilities
 @import 'utilities/utilities';

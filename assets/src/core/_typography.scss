@@ -1,8 +1,8 @@
-/// set your own fonts
+/// Uncomment and Set your own fonts from GoogleFonts
 /// ============================
 // @import url('https://fonts.googleapis.com/css?family=Be+Vietnam:400,400i,700|Raleway:400,400i,700&display=swap');
 
-/// uncomment to override default fonts of website
+/// Uncomment to override default fonts of website
 /// ============================
 // $font-primary: "Be Vietnam", sans-serif;
 // $font-secondary: "Raleway", sans-serif;
@@ -10,7 +10,7 @@
 .font-primary { font-family: $font-primary !important; }
 .font-secondary { font-family: $font-secondary !important; }
 
-/// Basic assignation of fonts
+/// Basic fonts declaration
 /// ============================
 html, body {
   font-family: $font-secondary;
