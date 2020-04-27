@@ -1,0 +1,116 @@
+{
+  "init": [
+    {
+      "name": "initJssCs",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/transport/setup-jss.js",
+      "hash": "6ti+1Zx6ku50FLNdv09RPg=="
+    },
+    {
+      "name": "installTheme",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/content/theme.ts",
+      "hash": "vULi9RO3idSGAWMOeGJIlQ=="
+    },
+    {
+      "name": "codeSelection",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/code/selection.js",
+      "hash": "dZFjuZeiuDsVx04kfMF57Q=="
+    },
+    {
+      "name": "sameLineLengthInCodes",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/code/same-line-length.js",
+      "hash": "mzuT/aCD2W1B5csBs2DHuQ=="
+    },
+    {
+      "name": "initHintBox",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/code/line-hint/index.js",
+      "hash": "IJpEqimc6Yl/Y8vQl2tpQQ=="
+    },
+    {
+      "name": "initCodeLineRef",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/code/line-ref/index.js",
+      "hash": "LRJChkdq45uKasOs0vAn5A=="
+    },
+    {
+      "name": "initSmartCopy",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/code/smart-copy.js",
+      "hash": "OhuD7JRY0e370WPABW4OrA=="
+    },
+    {
+      "name": "copyHeadings",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/heading/copy-headings.js",
+      "hash": "o4yA8fKcfhw2YgPFhgqVgQ=="
+    },
+    {
+      "name": "contentNavHighlight",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/contentnav/highlight.js",
+      "hash": "AAfQ4VJo2S0KcJTWcS0iIQ=="
+    },
+    {
+      "name": "loadDeferredIFrames",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/transport/deferred-iframe.js",
+      "hash": "ygoGBB/+iuQlLFG2mbQXWw=="
+    },
+    {
+      "name": "smoothLoading",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/transport/smooth-loading.js",
+      "hash": "Rx1+gxeF0Kmq1dV6GcN4PA=="
+    },
+    {
+      "name": "tocHighlight",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/toc/toc-highlight.js",
+      "hash": "8YevJOCE1J1ApDxtrmyUCw=="
+    },
+    {
+      "name": "postNavSearch",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/toc/search/post-nav/index.js",
+      "hash": "ns75u940ceHtgqhPowqHkw=="
+    },
+    {
+      "name": "reloadOnChange",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/serve/reload.js",
+      "hash": "mgONjlzl0d9d/wsAKCraRA=="
+    }
+  ],
+  "components": [
+    {
+      "name": "ToCPrevNext",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/toc/prevnext/index.js",
+      "hash": "a5+vxDrvtLOyJkD/4tYTzg=="
+    },
+    {
+      "name": "GithubSearch",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/misc/github/search.js",
+      "hash": "o9czcfztVQIKg4JwJg4JIw=="
+    },
+    {
+      "name": "ToCToggle",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/toc/toggle/index.js",
+      "hash": "uNYl817/0zUcZq3pqSuTzQ=="
+    },
+    {
+      "name": "DarkModeSwitch",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/darkmode/index.js",
+      "hash": "7pOXsFsFyzuDTjT8tRN9fA=="
+    },
+    {
+      "name": "ConfigTransport",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/transport/config.js",
+      "hash": "fO7eSbyAr7ut8Ng4msn1bw=="
+    },
+    {
+      "name": "TabSelector",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/tabs/selector.js",
+      "hash": "ngKnvxQHTpwp9JalJWkimA=="
+    },
+    {
+      "name": "CollapseControl",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/collapse/collapse-control.js",
+      "hash": "poRQkPIMF62imwhk0obfaQ=="
+    }
+  ],
+  "renderer": {
+    "name": "getRenderer",
+    "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/transport/renderer.js",
+    "hash": "h8KkspInxQZvxW/+7wc9FQ=="
+  }
+}
