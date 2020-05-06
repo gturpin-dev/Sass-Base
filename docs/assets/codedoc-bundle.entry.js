@@ -14,21 +14,21 @@ import { tocHighlight } from '/home/guillaume/public_html/Sass-Base/.codedoc/nod
 import { postNavSearch } from '/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/toc/search/post-nav/index.js';postNavSearch();
 import { reloadOnChange } from '/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/serve/reload.js';reloadOnChange();
 import { ToCPrevNext } from '/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/toc/prevnext/index.js';
+import { CollapseControl } from '/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/collapse/collapse-control.js';
 import { GithubSearch } from '/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/misc/github/search.js';
 import { ToCToggle } from '/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/page/toc/toggle/index.js';
 import { DarkModeSwitch } from '/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/darkmode/index.js';
 import { ConfigTransport } from '/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/transport/config.js';
 import { TabSelector } from '/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/tabs/selector.js';
-import { CollapseControl } from '/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/collapse/collapse-control.js';
 
 const components = {
   'a5+vxDrvtLOyJkD/4tYTzg==': ToCPrevNext,
+  'poRQkPIMF62imwhk0obfaQ==': CollapseControl,
   'o9czcfztVQIKg4JwJg4JIw==': GithubSearch,
   'uNYl817/0zUcZq3pqSuTzQ==': ToCToggle,
   '7pOXsFsFyzuDTjT8tRN9fA==': DarkModeSwitch,
   'fO7eSbyAr7ut8Ng4msn1bw==': ConfigTransport,
-  'ngKnvxQHTpwp9JalJWkimA==': TabSelector,
-  'poRQkPIMF62imwhk0obfaQ==': CollapseControl
+  'ngKnvxQHTpwp9JalJWkimA==': TabSelector
 };
 
 const renderer = getRenderer();

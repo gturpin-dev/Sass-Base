@@ -1,8 +1,12 @@
-Here are links to different section of Sass Base's documentation.
+**Sass Base v3.1.2** - Here are links to different section of Sass Base's documentation.
 
-<br><br>
+<br>
 
 [Home](/)
-[Markdown Cheat Sheet](/docs/cheat-sheet)
-[Code Features](/docs/code-features)
 [Folders](/docs/folders)
+
+> :Collapse label=Utilities
+>
+> [Buttons](/docs/utilities/buttons)
+> [truc](/docs/truc)
+> [truc](/docs/truc)

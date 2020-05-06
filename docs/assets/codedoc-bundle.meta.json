@@ -78,6 +78,11 @@
       "hash": "a5+vxDrvtLOyJkD/4tYTzg=="
     },
     {
+      "name": "CollapseControl",
+      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/collapse/collapse-control.js",
+      "hash": "poRQkPIMF62imwhk0obfaQ=="
+    },
+    {
       "name": "GithubSearch",
       "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/misc/github/search.js",
       "hash": "o9czcfztVQIKg4JwJg4JIw=="
@@ -101,11 +106,6 @@
       "name": "TabSelector",
       "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/tabs/selector.js",
       "hash": "ngKnvxQHTpwp9JalJWkimA=="
-    },
-    {
-      "name": "CollapseControl",
-      "filename": "/home/guillaume/public_html/Sass-Base/.codedoc/node_modules/@codedoc/core/dist/es6/components/collapse/collapse-control.js",
-      "hash": "poRQkPIMF62imwhk0obfaQ=="
     }
   ],
   "renderer": {
