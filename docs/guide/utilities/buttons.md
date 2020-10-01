@@ -8,7 +8,7 @@ Each type of buttons is looped over `$user-colors` (from [core/variables.scss](g
 | .button-outlined-primary | outlined button become full on :hover  |
 | .button-invert-primary   |                                        |
 
-Buttons are generated with above classes and you can change "primary" with every `$user-colors` key. e.g. `.button-secondary` or `.button-lightgrey`
+Buttons are generated with above classes and you can change "primary" with every `$user-colors` key. e.g. `.button-secondary` or `.button-lightgrey` etc...
 
 ## How to custom
 
