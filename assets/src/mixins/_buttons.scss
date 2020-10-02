@@ -7,7 +7,9 @@
 	border: 0;
 	@include text-contrast($bgColor);
 	
-	&:hover {
+	&:hover,
+	&:active,
+	&.active {
 		background-color: darken($bgColor, $amount);
 	}
 }
@@ -21,7 +23,9 @@
 	border: 1px solid $bgColor;
 	@include text-contrast($bgColor);
 	
-	&:hover {
+	&:hover,
+	&:active,
+	&.active {
 		background-color: transparent;
 		color: $bgColor;
 	}
@@ -31,12 +35,14 @@
 /// @author Guillaume TURPIN
 /// @since v-2.0.2
 /// @output button with inverted outlined variation
-@mixin button-outlined-variant($bgColor) {
+@mixin button-outline-variant($bgColor) {
 	border: 1px solid $bgColor;
 	background-color: transparent;
 	color: $bgColor;
 	
-	&:hover {
+	&:hover,
+	&:active,
+	&.active {
 		background-color: $bgColor;
 		@include text-contrast($bgColor);
 	}

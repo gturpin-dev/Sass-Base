@@ -15,9 +15,9 @@
 		@include button-variant($value);
 	}
 	
-	.button-outlined-#{$color} {
+	.button-outline-#{$color} {
 		@extend %btn;
-		@include button-outlined-variant($value);
+		@include button-outline-variant($value);
 	}
 	
 	.button-invert-#{$color} {

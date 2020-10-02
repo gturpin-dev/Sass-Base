@@ -1907,7 +1907,7 @@ h6 {
   font-family: "BioRhyme", sans-serif;
 }
 
-.button-primary, .button-outlined-primary, .button-invert-primary, .button-secondary, .button-outlined-secondary, .button-invert-secondary, .button-grey, .button-outlined-grey, .button-invert-grey, .button-lightgrey, .button-outlined-lightgrey, .button-invert-lightgrey, .button-danger, .button-outlined-danger, .button-invert-danger, .button-white, .button-outlined-white, .button-invert-white, .button-black, .button-outlined-black, .button-invert-black {
+.button-primary, .button-outline-primary, .button-invert-primary, .button-secondary, .button-outline-secondary, .button-invert-secondary, .button-grey, .button-outline-grey, .button-invert-grey, .button-lightgrey, .button-outline-lightgrey, .button-invert-lightgrey, .button-danger, .button-outline-danger, .button-invert-danger, .button-white, .button-outline-white, .button-invert-white, .button-black, .button-outline-black, .button-invert-black {
   display: inline-block;
   padding: .5em 2em;
   text-decoration: none !important;
@@ -1927,17 +1927,17 @@ h6 {
   color: white;
 }
 
-.button-primary:hover {
+.button-primary:hover, .button-primary:active, .button-primary.active {
   background-color: #e20028;
 }
 
-.button-outlined-primary {
+.button-outline-primary {
   border: 1px solid #ff2f54;
   background-color: transparent;
   color: #ff2f54;
 }
 
-.button-outlined-primary:hover {
+.button-outline-primary:hover, .button-outline-primary:active, .button-outline-primary.active {
   background-color: #ff2f54;
   color: white;
 }
@@ -1948,7 +1948,7 @@ h6 {
   color: white;
 }
 
-.button-invert-primary:hover {
+.button-invert-primary:hover, .button-invert-primary:active, .button-invert-primary.active {
   background-color: transparent;
   color: #ff2f54;
 }
@@ -1959,17 +1959,17 @@ h6 {
   color: black;
 }
 
-.button-secondary:hover {
+.button-secondary:hover, .button-secondary:active, .button-secondary.active {
   background-color: #267874;
 }
 
-.button-outlined-secondary {
+.button-outline-secondary {
   border: 1px solid #38b2ac;
   background-color: transparent;
   color: #38b2ac;
 }
 
-.button-outlined-secondary:hover {
+.button-outline-secondary:hover, .button-outline-secondary:active, .button-outline-secondary.active {
   background-color: #38b2ac;
   color: black;
 }
@@ -1980,7 +1980,7 @@ h6 {
   color: black;
 }
 
-.button-invert-secondary:hover {
+.button-invert-secondary:hover, .button-invert-secondary:active, .button-invert-secondary.active {
   background-color: transparent;
   color: #38b2ac;
 }
@@ -1991,17 +1991,17 @@ h6 {
   color: white;
 }
 
-.button-grey:hover {
+.button-grey:hover, .button-grey:active, .button-grey.active {
   background-color: #242424;
 }
 
-.button-outlined-grey {
+.button-outline-grey {
   border: 1px solid #4A4A4A;
   background-color: transparent;
   color: #4A4A4A;
 }
 
-.button-outlined-grey:hover {
+.button-outline-grey:hover, .button-outline-grey:active, .button-outline-grey.active {
   background-color: #4A4A4A;
   color: white;
 }
@@ -2012,7 +2012,7 @@ h6 {
   color: white;
 }
 
-.button-invert-grey:hover {
+.button-invert-grey:hover, .button-invert-grey:active, .button-invert-grey.active {
   background-color: transparent;
   color: #4A4A4A;
 }
@@ -2023,17 +2023,17 @@ h6 {
   color: white;
 }
 
-.button-lightgrey:hover {
+.button-lightgrey:hover, .button-lightgrey:active, .button-lightgrey.active {
   background-color: #4d4d4d;
 }
 
-.button-outlined-lightgrey {
+.button-outline-lightgrey {
   border: 1px solid #737373;
   background-color: transparent;
   color: #737373;
 }
 
-.button-outlined-lightgrey:hover {
+.button-outline-lightgrey:hover, .button-outline-lightgrey:active, .button-outline-lightgrey.active {
   background-color: #737373;
   color: white;
 }
@@ -2044,7 +2044,7 @@ h6 {
   color: white;
 }
 
-.button-invert-lightgrey:hover {
+.button-invert-lightgrey:hover, .button-invert-lightgrey:active, .button-invert-lightgrey.active {
   background-color: transparent;
   color: #737373;
 }
@@ -2055,17 +2055,17 @@ h6 {
   color: white;
 }
 
-.button-danger:hover {
+.button-danger:hover, .button-danger:active, .button-danger.active {
   background-color: #cc0000;
 }
 
-.button-outlined-danger {
+.button-outline-danger {
   border: 1px solid #ff1919;
   background-color: transparent;
   color: #ff1919;
 }
 
-.button-outlined-danger:hover {
+.button-outline-danger:hover, .button-outline-danger:active, .button-outline-danger.active {
   background-color: #ff1919;
   color: white;
 }
@@ -2076,7 +2076,7 @@ h6 {
   color: white;
 }
 
-.button-invert-danger:hover {
+.button-invert-danger:hover, .button-invert-danger:active, .button-invert-danger.active {
   background-color: transparent;
   color: #ff1919;
 }
@@ -2087,17 +2087,17 @@ h6 {
   color: black;
 }
 
-.button-white:hover {
+.button-white:hover, .button-white:active, .button-white.active {
   background-color: #d9d9d9;
 }
 
-.button-outlined-white {
+.button-outline-white {
   border: 1px solid #fff;
   background-color: transparent;
   color: #fff;
 }
 
-.button-outlined-white:hover {
+.button-outline-white:hover, .button-outline-white:active, .button-outline-white.active {
   background-color: #fff;
   color: black;
 }
@@ -2108,7 +2108,7 @@ h6 {
   color: black;
 }
 
-.button-invert-white:hover {
+.button-invert-white:hover, .button-invert-white:active, .button-invert-white.active {
   background-color: transparent;
   color: #fff;
 }
@@ -2119,17 +2119,17 @@ h6 {
   color: white;
 }
 
-.button-black:hover {
+.button-black:hover, .button-black:active, .button-black.active {
   background-color: black;
 }
 
-.button-outlined-black {
+.button-outline-black {
   border: 1px solid #000;
   background-color: transparent;
   color: #000;
 }
 
-.button-outlined-black:hover {
+.button-outline-black:hover, .button-outline-black:active, .button-outline-black.active {
   background-color: #000;
   color: white;
 }
@@ -2140,7 +2140,7 @@ h6 {
   color: white;
 }
 
-.button-invert-black:hover {
+.button-invert-black:hover, .button-invert-black:active, .button-invert-black.active {
   background-color: transparent;
   color: #000;
 }
