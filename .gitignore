@@ -1,5 +1,5 @@
-*.css
-*.css.map
+# *.css
+# *.css.map
 *.html
 node_modules/
-dist/
+# dist/

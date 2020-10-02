@@ -7,9 +7,9 @@
 /// @author Guillaume TURPIN
 /// @output font awesome icon for pseudo-elements
 @mixin font-awesome($iconCode, $iconType: 'Free') {
-  font-family: 'Font Awesome 5 #{$iconType}';
-  font-weight: 900;
-  content: '#{$iconCode}';
+	font-family: 'Font Awesome 5 #{$iconType}';
+	font-weight: 900;
+	content: '#{$iconCode}';
 }
 
 /// Easily add a triangle (must be used in pseudo-elements)
@@ -23,27 +23,27 @@
 /// @author Guillaume TURPIN
 /// @output display triangle
 @mixin triangle($direction, $color: #eee, $size: .5rem, $position: absolute) {
-  position: $position;
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border: $size solid transparent;
-
-  @if $direction == top {
-    border-bottom-color: $color;
-    border-top-width: 0;
-  } @else if $direction == right {
-    border-left-color: $color;
-    border-right-width: 0;
-  } @else if $direction == bottom {
-    border-top-color: $color;
-    border-bottom-width: 0;
-  } @else if $direction == left {
-    border-right-color: $color;
-    border-left-width: 0;
-  } @else {
-    @warn "the $direction must be a value like top, right, bottom, left and not '#{$direction}'";
-  }
+	position: $position;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border: $size solid transparent;
+	
+	@if $direction == top {
+		border-bottom-color: $color;
+		border-top-width: 0;
+	} @else if $direction == right {
+		border-left-color: $color;
+		border-right-width: 0;
+	} @else if $direction == bottom {
+		border-top-color: $color;
+		border-bottom-width: 0;
+	} @else if $direction == left {
+		border-right-color: $color;
+		border-left-width: 0;
+	} @else {
+		@warn "the $direction must be a value like top, right, bottom, left and not '#{$direction}'";
+	}
 }
 
 /// Concat pixels into em
@@ -54,7 +54,7 @@
 /// @since v-1.0.0
 /// @return {em}          value of $pixels in em
 @function em($pixels, $context: 16px) {
-  @return #{$pixels/$context}em;
+	@return #{$pixels/$context}em;
 }
 
 /// Add a tooltip on the element
@@ -72,86 +72,86 @@
 /// @author Guillaume TURPIN
 /// @output a tooltip with :before and :after of the current element
 @mixin tooltip($direction: top, $color: #000, $animation: fadein, $content: '', $fontSize: 16px, $triangleSize: 10px, $spacingTriangle: 5px) {
-
-  &:before { // box tooltip
-    content: $content; /* text in the tooltip */
-    position: absolute;
-    line-height: $fontSize;
-    font-size: $fontSize;
-    width: max-content;
-    background-color: $color;
-    padding: .5em 1.5em;
-    border-radius: 8px;
-    z-index: 999;
-
-    @if $animation == fadein {
-      opacity: 0;
-      visibility: hidden;
-      transition: .4s;
-    }
-
-    @if $direction == top {
-      bottom: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
-      left: 50%;
-      transform: translateX(-50%);
-    } @else if $direction == right {
-      left: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
-      top: 50%;
-      transform: translateY(-50%);
-    } @else if $direction == bottom {
-      top: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
-      left: 50%;
-      transform: translateX(-50%);
-    } @else if  $direction == left {
-      right: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
-      top: 50%;
-      transform: translateY(-50%);
-    } @else {
-      @warn "the $direction must be a value like down, up, right, left and not '#{$direction}'";
-    }
-  }
-
-  &:after { // triangle
-    content: '';
-    z-index: 999;
-
-    @if $animation == fadein {
-      opacity: 0;
-      visibility: hidden;
-      transition: .4s;
-    }
-
-    @if $direction == top {
-      @include triangle($direction: bottom, $position: absolute, $size: $triangleSize, $color: $color);
-      top: - $triangleSize - $spacingTriangle;
-      left: 50%;
-      transform: translateX(-50%);
-    } @else if $direction == right {
-      @include triangle($direction: left, $position: absolute, $size: $triangleSize, $color: $color);
-      top: 50%;
-      transform: translateY(-50%);
-      right: - $triangleSize - $spacingTriangle;
-    } @else if $direction == bottom {
-      @include triangle($direction: top, $position: absolute, $size: $triangleSize, $color: $color);
-      bottom: - $triangleSize - $spacingTriangle;
-      left: 50%;
-      transform: translateX(-50%);
-    } @else if $direction == left {
-      @include triangle($direction: right, $position: absolute, $size: $triangleSize, $color: $color);
-      top: 50%;
-      left: - $triangleSize - $spacingTriangle;
-      transform: translateY(-50%);
-    }
-  }
-
-  // Animations //
-  @if $animation == fadein {
-    &:hover:before,
-    &:hover:after {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
+	
+	&:before { // box tooltip
+		content: $content; /* text in the tooltip */
+		position: absolute;
+		line-height: $fontSize;
+		font-size: $fontSize;
+		width: max-content;
+		background-color: $color;
+		padding: .5em 1.5em;
+		border-radius: 8px;
+		z-index: 999;
+		
+		@if $animation == fadein {
+			opacity: 0;
+			visibility: hidden;
+			transition: .4s;
+		}
+		
+		@if $direction == top {
+			bottom: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
+			left: 50%;
+			transform: translateX(-50%);
+		} @else if $direction == right {
+			left: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
+			top: 50%;
+			transform: translateY(-50%);
+		} @else if $direction == bottom {
+			top: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
+			left: 50%;
+			transform: translateX(-50%);
+		} @else if  $direction == left {
+			right: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
+			top: 50%;
+			transform: translateY(-50%);
+		} @else {
+			@warn "the $direction must be a value like down, up, right, left and not '#{$direction}'";
+		}
+	}
+	
+	&:after { // triangle
+		content: '';
+		z-index: 999;
+		
+		@if $animation == fadein {
+			opacity: 0;
+			visibility: hidden;
+			transition: .4s;
+		}
+		
+		@if $direction == top {
+			@include triangle($direction: bottom, $position: absolute, $size: $triangleSize, $color: $color);
+			top: - $triangleSize - $spacingTriangle;
+			left: 50%;
+			transform: translateX(-50%);
+		} @else if $direction == right {
+			@include triangle($direction: left, $position: absolute, $size: $triangleSize, $color: $color);
+			top: 50%;
+			transform: translateY(-50%);
+			right: - $triangleSize - $spacingTriangle;
+		} @else if $direction == bottom {
+			@include triangle($direction: top, $position: absolute, $size: $triangleSize, $color: $color);
+			bottom: - $triangleSize - $spacingTriangle;
+			left: 50%;
+			transform: translateX(-50%);
+		} @else if $direction == left {
+			@include triangle($direction: right, $position: absolute, $size: $triangleSize, $color: $color);
+			top: 50%;
+			left: - $triangleSize - $spacingTriangle;
+			transform: translateY(-50%);
+		}
+	}
+	
+	// Animations //
+	@if $animation == fadein {
+		&:hover:before,
+		&:hover:after {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
 }
 
 /// required by font-face mixin
@@ -161,11 +161,11 @@
 /// @since v-1.0.1
 @function str-replace($string, $search, $replace: "") {
 	$index: str-index($string, $search);
-
+	
 	@if $index {
 		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
 	}
-
+	
 	@return $string;
 }
 
@@ -177,9 +177,9 @@
 /// @author Guillaume TURPIN
 /// @since v-1.0.1
 @function strip-unit($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
-  }
-
-  @return $number;
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+	
+	@return $number;
 }
