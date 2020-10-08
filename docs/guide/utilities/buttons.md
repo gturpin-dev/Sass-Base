@@ -50,3 +50,34 @@ You can also use the `%btn` placeholder which set default style for every button
 	transition: .4s;
 }
 ```
+
+## Source Code
+```scss
+%btn {
+	display: inline-block;
+	padding: .5em 2em;
+	text-decoration: none !important;
+	user-select: none !important;
+	outline: none !important;
+	cursor: pointer;
+	transition: .4s;
+}
+
+// Creates a button with variation of each color in $user-colors
+@each $color, $value in $user-colors {
+	.button-#{$color} {
+		@extend %btn;
+		@include button-variant($value);
+	}
+	
+	.button-outline-#{$color} {
+		@extend %btn;
+		@include button-outline-variant($value);
+	}
+	
+	.button-invert-#{$color} {
+		@extend %btn;
+		@include button-invert-variant($value);
+	}
+}
+```
