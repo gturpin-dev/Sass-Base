@@ -4,11 +4,11 @@ Buttons class are made to be used with `<a>`, `<button>` and `<input>` tags
 
 Each type of buttons is looped over `$user-colors` (from [core/variables.scss](guide/core/variables)) so the generated buttons will depend of your colors array
 
-| class                    | description                            |
-| ------------------------ | -------------------------------------- |
-| .button-{color}          | classic button with a darken on :hover |
-| .button-outline-{color} | outlined button become full on :hover  |
-| .button-invert-{color}   | the reverse of outlined button         |
+| class                   | description                             |
+| ----------------------- | --------------------------------------- |
+| .button-{color}         | classic button with a darken on: hover  |
+| .button-outline-{color} | outlined button become full on  : hover |
+| .button-invert-{color}  | the reverse of outlined button          |
 
 Buttons are generated with above classes and you can change "color" with every `$user-colors` key. e.g. `.button-secondary` or `.button-lightgrey` etc...
 

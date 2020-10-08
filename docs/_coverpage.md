@@ -2,7 +2,7 @@
 
 # Sass Base <small>3.1.2</small>
 
-> A magical sass base for your projects.
+> A magical Sass base for your projects.
 
 - Simple and lightweight
 - Developer friendly
