@@ -6,6 +6,7 @@
 /// ============================
 // $font-primary: "Be Vietnam", sans-serif;
 // $font-secondary: "Raleway", sans-serif;
+$font-size-base: 16px;
 
 .font-primary { font-family: $font-primary !important; }
 .font-secondary { font-family: $font-secondary !important; }
@@ -15,6 +16,7 @@
 html, body {
 	font-family: $font-secondary;
 	color: $color-grey;
+	font-size: $font-size-base;
 }
 
 h1,
@@ -25,3 +27,19 @@ h5,
 h6 {
 	font-family: $font-primary;
 }
+
+/// Font sizes
+/// ============================
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+h1, .h1 { font-size: $h1-font-size; }
+h2, .h2 { font-size: $h2-font-size; }
+h3, .h3 { font-size: $h3-font-size; }
+h4, .h4 { font-size: $h4-font-size; }
+h5, .h5 { font-size: $h5-font-size; }
+h6, .h6 { font-size: $h6-font-size; }
