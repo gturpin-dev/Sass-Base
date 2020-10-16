@@ -13,6 +13,5 @@ This file act as file importer, it means that it's only used to import others mi
 @import 'buttons';
 @import 'links';
 @import 'typography';
-@import 'text';
 @import 'variables';
 ```

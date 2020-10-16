@@ -29,7 +29,6 @@
 		- [_buttons.scss](guide/mixins/buttons)
 		- [_links.scss](guide/mixins/links)
 		- [_mixins.scss](guide/mixins/mixins)
-		- [_text.scss](guide/mixins/text)
 		- [_typography.scss](guide/mixins/typography)
 		- [_variables.scss](guide/mixins/variables)
 
