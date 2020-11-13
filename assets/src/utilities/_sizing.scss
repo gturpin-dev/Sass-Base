@@ -3,37 +3,37 @@ $step: 25; // 25%, must be multiple of 100 to keep this usefull value
 $ending: 100; // 100%, useless to go further
 
 $sizes: (
-  'w': width,
-  'h': height,
+	'w': width,
+	'h': height,
 );
 
 @each $bp-name, $breakpoint in $breakpoints {
-  @include above($breakpoint) {
-    $infix: infix($bp-name, $breakpoints);
-    /// classic sizing
-    /// ============================
-    @for $i from 0 through $ending/$step {
-      $val: $i * $step;
-
-      @each $prefix, $prop in $sizes {
-        .#{$infix}#{$prefix}-#{$val},
-        .#{$infix}child-#{$prefix}-#{$val} > * {
-          #{$prop}: $val * 1%;
-          max-#{$prop}: $val * 1%;
-        }
-      } // endeach
-    } // endfor
-
-    /// auto sizing
-    /// ============================
-    @each $prefix, $prop in $sizes {
-      .#{$infix}#{$prefix}-auto,
-      .#{$infix}child-#{$prefix}-auto > * {
-        #{$prop}: auto;
-        max-#{$prop}: 100%;
-      }
-    } // endeach
-  }
+	@include above($breakpoint) {
+		$infix: infix($bp-name, $breakpoints);
+		/// classic sizing
+		/// ============================
+		@for $i from 0 through $ending/$step {
+			$val: $i * $step;
+			
+			@each $prefix, $prop in $sizes {
+				.#{$infix}#{$prefix}-#{$val},
+				.#{$infix}child-#{$prefix}-#{$val} > * {
+					#{$prop}: $val * 1%;
+					max-#{$prop}: $val * 1%;
+				}
+			} // endeach
+		} // endfor
+		
+		/// auto sizing
+		/// ============================
+		@each $prefix, $prop in $sizes {
+			.#{$infix}#{$prefix}-auto,
+			.#{$infix}child-#{$prefix}-auto > * {
+				#{$prop}: auto;
+				max-#{$prop}: 100%;
+			}
+		} // endeach
+	}
 }
 
 /// Additionnal helpers

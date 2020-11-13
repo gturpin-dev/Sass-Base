@@ -1,17 +1,17 @@
 $displays: (
-  'none': none,
-  'inline': inline,
-  'block': block,
-  'iblock': inline-block,
-  'flex': flex,
-  'iflex': inline-flex,
+	'none'  : none,
+	'inline': inline,
+	'block' : block,
+	'iblock': inline-block,
+	'flex'  : flex,
+	'iflex' : inline-flex,
 );
 
 @each $name, $value in $displays {
-  @each $bp-name, $breakpoint in $breakpoints {
-    @include above($breakpoint) {
-      $infix: infix($bp-name, $breakpoints);
-      .#{$infix}d-#{$name} { display: $value !important; }
-    }
-  }
+	@each $bp-name, $breakpoint in $breakpoints {
+		@include above($breakpoint) {
+			$infix: infix($bp-name, $breakpoints);
+			.#{$infix}d-#{$name} { display: $value !important; }
+		}
+	}
 }

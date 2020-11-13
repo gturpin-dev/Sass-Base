@@ -1,49 +1,49 @@
 /// Breakpoints: container-values
 /// ============================
 $container-breakpoints: (
-  0: 540px,
-  576: 540px,
-  768: 720px,
-  992: 960px,
-  1200: 1140px
+	0   : 540px,
+	576 : 540px,
+	768 : 720px,
+	992 : 960px,
+	1200: 1140px,
+	// 1400: 1320px, // To make larger containers
 ) !default;
 $container-gap: 5px;
-
 
 /// Container set with padding, it allows you to add background
 /// ============================
 .container-padding {
-  box-sizing: border-box;
-  width: 100%;
-
-  @each $breakpoint, $container-value in $container-breakpoints {
-    @include above($breakpoint) {
-      @if $breakpoint == 0 {
-        padding-left: $container-gap;
-        padding-right: $container-gap;
-      } @else {
-        padding-left: calc((50% - #{$container-value} / 2));
-        padding-right: calc((50% - #{$container-value} / 2));
-      }
-    }
-  }
+	box-sizing: border-box;
+	width: 100%;
+	
+	@each $breakpoint, $container-value in $container-breakpoints {
+		@include above($breakpoint) {
+			@if $breakpoint == 0 {
+				padding-left: $container-gap;
+				padding-right: $container-gap;
+			} @else {
+				padding-left: calc((50% - #{$container-value} / 2));
+				padding-right: calc((50% - #{$container-value} / 2));
+			}
+		}
+	}
 }
 
 /// Container set with margin, it allows you to set additionnal padding
 /// ============================
 .container-margin {
-  box-sizing: border-box;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-
-  @each $breakpoint, $container-value in $container-breakpoints {
-    @include above($breakpoint) {
-      @if $breakpoint == 0 {
-        max-width: calc(100% - #{$container-gap} * 2);
-      } @else {
-        max-width: $container-value;
-      }
-    }
-  }
+	box-sizing: border-box;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+	
+	@each $breakpoint, $container-value in $container-breakpoints {
+		@include above($breakpoint) {
+			@if $breakpoint == 0 {
+				max-width: calc(100% - #{$container-gap} * 2);
+			} @else {
+				max-width: $container-value;
+			}
+		}
+	}
 }
