@@ -1,0 +1,436 @@
+# mixins/_base-mixins.scss
+
+We will start by the base mixins, there i placed every mixin that I didn't found category for. You can add your own mixins there or in [dev/_main.scss](guide/dev/main.md)
+
+!> See that every mixins are fully documented then you can just look `@example` or `@require` to help you
+
+If you don't know utitilities of Sass documentation go to http://sassdoc.com/annotations/
+
+I will just describe what the mixins is used for because the Sass doc is here to do the rest
+
+## font-awesome
+
+Start with usefull one :
+
+```scss
+/// @param  {string} $iconCode Encoded icon like "\f16d"
+/// @param  {string} $iconType ['Free']      Type of icon like "Brands"
+/// @link https://fontawesome.com/icons?d=gallery
+/// @example scss - font-awesome mixin
+///   font-awesome('\f007', 'Solid')
+/// @since v-1.0.0
+/// @author Guillaume TURPIN
+/// @output font awesome icon for pseudo-elements
+@mixin font-awesome($iconCode, $iconType: 'Free') {
+	font-family: 'Font Awesome 5 #{$iconType}';
+	font-weight: 900;
+	content: '#{$iconCode}';
+}
+```
+
+This is a quick shortcut for including [font awesome icons](https://fontawesome.com/) in pseudo-elements in css like `:before` or `:after`
+
+<hr>
+
+## triangle
+
+I believe that sometimes you have to use triangle in css so I added a triangle mixin for : 
+
+```scss
+/// Easily add a triangle (must be used in pseudo-elements)
+/// @param  {string} $direction direction where the triangle points
+/// @param  {color} $color      [#eee] Couleur du triangle
+/// @param  {number} $size      [0.5rem]       size of triangle
+/// @param  {string} $position  [relative]     position of triangle
+/// @example scss - triangle mixin
+///   triangle(top, #eee, .5rem, absolute)
+/// @since v-1.0.0
+/// @author Guillaume TURPIN
+/// @output display triangle
+@mixin triangle($direction, $color: #eee, $size: .5rem, $position: absolute) {
+	position: $position;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border: $size solid transparent;
+	
+	@if $direction == top {
+		border-bottom-color: $color;
+		border-top-width: 0;
+	} @else if $direction == right {
+		border-left-color: $color;
+		border-right-width: 0;
+	} @else if $direction == bottom {
+		border-top-color: $color;
+		border-bottom-width: 0;
+	} @else if $direction == left {
+		border-right-color: $color;
+		border-left-width: 0;
+	} @else {
+		@warn "the $direction must be a value like top, right, bottom, left and not '#{$direction}'";
+	}
+}
+```
+
+This is an upgrade of the classic triangle mixin, there i added a param for direction of the triangle, then you only have one mixin for all triangles, I also added `$position`, this param is used if you want to easily add a triangle in pseudo elements
+
+<hr>
+
+## em
+
+Follow with a quick function that convert pixels into em, you need a context in px to work with
+
+```scss
+/// Concat pixels into em
+/// @param  {px} $pixels  number to concat
+/// @param  {number} $context [16px]  font-size to divide
+/// @example scss - em function
+///   em(25px, 16px)
+/// @since v-1.0.0
+/// @return {em}          value of $pixels in em
+@function em($pixels, $context: 16px) {
+	@return #{$pixels/$context}em;
+}
+```
+
+<hr>
+
+## tooltip
+
+Remember triangles ? here you can find a tooltip mixins that use triangle mixin to work :
+
+```scss
+
+/// Add a tooltip on the element
+/// @param  {string} $direction       [top]         direction for tooltip (top, right, bottom, left)
+/// @param  {color}  $color           [#000]        color of tooltip
+/// @param  {string} $animation       [fadein]      type of animation (fadein)
+/// @param  {string} $content         ['']          content of tooltip
+/// @param  {number} $fontSize        [16px]        font-size of tooltip
+/// @param  {number} $triangleSize    [10px]        size of triangle
+/// @param  {number} $spacingTriangle [5px]         space between triangle and element
+/// @require {mixin} triangle - to add a triangle with the tooltip
+/// @example scss - tooltip mixin
+///   tooltip($content: 'Left tooltip !', $direction: left, $color: #00b894);
+/// @since v-1.0.0
+/// @author Guillaume TURPIN
+/// @output a tooltip with :before and :after of the current element
+@mixin tooltip($direction: top, $color: #000, $animation: fadein, $content: '', $fontSize: 16px, $triangleSize: 10px, $spacingTriangle: 5px) {
+	
+	&:before { // box tooltip
+		content: $content; /* text in the tooltip */
+		position: absolute;
+		line-height: $fontSize;
+		font-size: $fontSize;
+		width: max-content;
+		background-color: $color;
+		padding: .5em 1.5em;
+		border-radius: 8px;
+		z-index: 999;
+		
+		@if $animation == fadein {
+			opacity: 0;
+			visibility: hidden;
+			transition: .4s;
+		}
+		
+		@if $direction == top {
+			bottom: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
+			left: 50%;
+			transform: translateX(-50%);
+		} @else if $direction == right {
+			left: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
+			top: 50%;
+			transform: translateY(-50%);
+		} @else if $direction == bottom {
+			top: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
+			left: 50%;
+			transform: translateX(-50%);
+		} @else if  $direction == left {
+			right: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
+			top: 50%;
+			transform: translateY(-50%);
+		} @else {
+			@warn "the $direction must be a value like down, up, right, left and not '#{$direction}'";
+		}
+	}
+	
+	&:after { // triangle
+		content: '';
+		z-index: 999;
+		
+		@if $animation == fadein {
+			opacity: 0;
+			visibility: hidden;
+			transition: .4s;
+		}
+		
+		@if $direction == top {
+			@include triangle($direction: bottom, $position: absolute, $size: $triangleSize, $color: $color);
+			top: - $triangleSize - $spacingTriangle;
+			left: 50%;
+			transform: translateX(-50%);
+		} @else if $direction == right {
+			@include triangle($direction: left, $position: absolute, $size: $triangleSize, $color: $color);
+			top: 50%;
+			transform: translateY(-50%);
+			right: - $triangleSize - $spacingTriangle;
+		} @else if $direction == bottom {
+			@include triangle($direction: top, $position: absolute, $size: $triangleSize, $color: $color);
+			bottom: - $triangleSize - $spacingTriangle;
+			left: 50%;
+			transform: translateX(-50%);
+		} @else if $direction == left {
+			@include triangle($direction: right, $position: absolute, $size: $triangleSize, $color: $color);
+			top: 50%;
+			left: - $triangleSize - $spacingTriangle;
+			transform: translateY(-50%);
+		}
+	}
+	
+	// Animations //
+	@if $animation == fadein {
+		&:hover:before,
+		&:hover:after {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+```
+
+<hr>
+
+## str-replace
+
+This function is a classic string replace in Sass :
+
+```scss
+/// required by font-face mixin
+/// @example scss - str-replace mixin
+///   str-replace($name, " ", "_")
+/// @author Guillaume TURPIN
+/// @since v-1.0.1
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+	
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+	
+	@return $string;
+}
+```
+
+<hr>
+
+## strip-unit
+
+Another usefull function to strip unit of sass variable, this is used in [breakpoints mixins](guide/mixins/breakpoints.md) to type only numbers in media queries
+
+```scss
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+/// @example scss - strip-unit mixin
+///   strip-unit(1920px);
+/// @author Guillaume TURPIN
+/// @since v-1.0.1
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+	
+	@return $number;
+}
+```
+
+## Source Code
+
+```scss
+/// @param  {string} $iconCode Encoded icon like "\f16d"
+/// @param  {string} $iconType ['Free']      Type of icon like "Brands"
+/// @link https://fontawesome.com/icons?d=gallery
+/// @example scss - font-awesome mixin
+///   font-awesome('\f007', 'Solid')
+/// @since v-1.0.0
+/// @author Guillaume TURPIN
+/// @output font awesome icon for pseudo-elements
+@mixin font-awesome($iconCode, $iconType: 'Free') {
+	font-family: 'Font Awesome 5 #{$iconType}';
+	font-weight: 900;
+	content: '#{$iconCode}';
+}
+
+/// Easily add a triangle (must be used in pseudo-elements)
+/// @param  {string} $direction direction where the triangle points
+/// @param  {color} $color      [#eee] Couleur du triangle
+/// @param  {number} $size      [0.5rem]       size of triangle
+/// @param  {string} $position  [relative]     position of triangle
+/// @example scss - triangle mixin
+///   triangle(top, #eee, .5rem, absolute)
+/// @since v-1.0.0
+/// @author Guillaume TURPIN
+/// @output display triangle
+@mixin triangle($direction, $color: #eee, $size: .5rem, $position: absolute) {
+	position: $position;
+	display: inline-block;
+	width: 0;
+	height: 0;
+	border: $size solid transparent;
+	
+	@if $direction == top {
+		border-bottom-color: $color;
+		border-top-width: 0;
+	} @else if $direction == right {
+		border-left-color: $color;
+		border-right-width: 0;
+	} @else if $direction == bottom {
+		border-top-color: $color;
+		border-bottom-width: 0;
+	} @else if $direction == left {
+		border-right-color: $color;
+		border-left-width: 0;
+	} @else {
+		@warn "the $direction must be a value like top, right, bottom, left and not '#{$direction}'";
+	}
+}
+
+/// Concat pixels into em
+/// @param  {px} $pixels  number to concat
+/// @param  {number} $context [16px]  font-size to divide
+/// @example scss - em function
+///   em(25px, 16px)
+/// @since v-1.0.0
+/// @return {em}          value of $pixels in em
+@function em($pixels, $context: 16px) {
+	@return #{$pixels/$context}em;
+}
+
+/// Add a tooltip on the element
+/// @param  {string} $direction       [top]         direction for tooltip (top, right, bottom, left)
+/// @param  {color}  $color           [#000]        color of tooltip
+/// @param  {string} $animation       [fadein]      type of animation (fadein)
+/// @param  {string} $content         ['']          content of tooltip
+/// @param  {number} $fontSize        [16px]        font-size of tooltip
+/// @param  {number} $triangleSize    [10px]        size of triangle
+/// @param  {number} $spacingTriangle [5px]         space between triangle and element
+/// @require {mixin} triangle - to add a triangle with the tooltip
+/// @example scss - tooltip mixin
+///   tooltip($content: 'Left tooltip !', $direction: left, $color: #00b894);
+/// @since v-1.0.0
+/// @author Guillaume TURPIN
+/// @output a tooltip with :before and :after of the current element
+@mixin tooltip($direction: top, $color: #000, $animation: fadein, $content: '', $fontSize: 16px, $triangleSize: 10px, $spacingTriangle: 5px) {
+	
+	&:before { // box tooltip
+		content: $content; /* text in the tooltip */
+		position: absolute;
+		line-height: $fontSize;
+		font-size: $fontSize;
+		width: max-content;
+		background-color: $color;
+		padding: .5em 1.5em;
+		border-radius: 8px;
+		z-index: 999;
+		
+		@if $animation == fadein {
+			opacity: 0;
+			visibility: hidden;
+			transition: .4s;
+		}
+		
+		@if $direction == top {
+			bottom: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
+			left: 50%;
+			transform: translateX(-50%);
+		} @else if $direction == right {
+			left: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
+			top: 50%;
+			transform: translateY(-50%);
+		} @else if $direction == bottom {
+			top: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
+			left: 50%;
+			transform: translateX(-50%);
+		} @else if  $direction == left {
+			right: calc(100% + #{$triangleSize} + #{$spacingTriangle}); // size of element + size and spacing of triangle
+			top: 50%;
+			transform: translateY(-50%);
+		} @else {
+			@warn "the $direction must be a value like down, up, right, left and not '#{$direction}'";
+		}
+	}
+	
+	&:after { // triangle
+		content: '';
+		z-index: 999;
+		
+		@if $animation == fadein {
+			opacity: 0;
+			visibility: hidden;
+			transition: .4s;
+		}
+		
+		@if $direction == top {
+			@include triangle($direction: bottom, $position: absolute, $size: $triangleSize, $color: $color);
+			top: - $triangleSize - $spacingTriangle;
+			left: 50%;
+			transform: translateX(-50%);
+		} @else if $direction == right {
+			@include triangle($direction: left, $position: absolute, $size: $triangleSize, $color: $color);
+			top: 50%;
+			transform: translateY(-50%);
+			right: - $triangleSize - $spacingTriangle;
+		} @else if $direction == bottom {
+			@include triangle($direction: top, $position: absolute, $size: $triangleSize, $color: $color);
+			bottom: - $triangleSize - $spacingTriangle;
+			left: 50%;
+			transform: translateX(-50%);
+		} @else if $direction == left {
+			@include triangle($direction: right, $position: absolute, $size: $triangleSize, $color: $color);
+			top: 50%;
+			left: - $triangleSize - $spacingTriangle;
+			transform: translateY(-50%);
+		}
+	}
+	
+	// Animations //
+	@if $animation == fadein {
+		&:hover:before,
+		&:hover:after {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+/// required by font-face mixin
+/// @example scss - str-replace mixin
+///   str-replace($name, " ", "_")
+/// @author Guillaume TURPIN
+/// @since v-1.0.1
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+	
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+	
+	@return $string;
+}
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+/// @example scss - strip-unit mixin
+///   strip-unit(1920px);
+/// @author Guillaume TURPIN
+/// @since v-1.0.1
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
+	}
+	
+	@return $number;
+}
+```

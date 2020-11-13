@@ -1,56 +1,56 @@
 /// Reponsive class
 /// ============================
 @each $bp-name, $breakpoint in $breakpoints {
-  @include above($breakpoint) {
-    $infix: infix($bp-name, $breakpoints);
-    /// Flex variations
-    /// ============================
-    .#{$infix}flex-row {
-      display: flex !important;
-      flex-direction: row !important;
-    }
-
-    .#{$infix}flex-col {
-      display: flex !important;
-      flex-direction: column !important;
-    }
-
-    .#{$infix}flex-center {
-      align-items: center !important;
-      justify-content: center !important;
-    }
-
-    .#{$infix}flex-wrap { flex-wrap: wrap !important; }
-    .#{$infix}flex-nowrap { flex-wrap: nowrap !important; }
-
-    .#{$infix}justify-center { justify-content: center !important; }
-    .#{$infix}justify-start { justify-content: flex-start !important; }
-    .#{$infix}justify-end { justify-content: flex-end !important; }
-    .#{$infix}justify-between { justify-content: space-between !important; }
-    .#{$infix}justify-around { justify-content: space-around !important; }
-
-    .#{$infix}align-center { align-items: center !important; }
-    .#{$infix}align-start { align-items: flex-start !important; }
-    .#{$infix}align-end { align-items: flex-end !important; }
-    .#{$infix}align-between { align-items: space-between !important; }
-    .#{$infix}align-around { align-items: space-around !important; }
-
-    .#{$infix}content-center { align-content: center !important; }
-    .#{$infix}content-start { align-content: flex-start !important; }
-    .#{$infix}content-end { align-content: flex-end !important; }
-    .#{$infix}content-between { align-content: space-between !important; }
-    .#{$infix}content-around { align-content: space-around !important; }
-
-    .#{$infix}self-center { align-self: center !important; }
-    .#{$infix}self-start { align-self: flex-start !important; }
-    .#{$infix}self-end { align-self: flex-end !important; }
-    .#{$infix}self-between { align-self: space-between !important; }
-    .#{$infix}self-around { align-self: space-around !important; }
-
-    .#{$infix}flex-fill { flex: 1 1 auto !important; }
-    .#{$infix}flex-grow-0 { flex-grow: 0 !important; }
-    .#{$infix}flex-grow-1 { flex-grow: 1 !important; }
-    .#{$infix}flex-shrink-0 { flex-shrink: 0 !important; }
-    .#{$infix}flex-shrink-1 { flex-shrink: 1 !important; }
-  }
+	@include above($breakpoint) {
+		$infix: infix($bp-name, $breakpoints);
+		/// Flex variations
+		/// ============================
+		.#{$infix}flex-row {
+			display: flex !important;
+			flex-direction: row !important;
+		}
+		
+		.#{$infix}flex-col {
+			display: flex !important;
+			flex-direction: column !important;
+		}
+		
+		.#{$infix}flex-center {
+			align-items: center !important;
+			justify-content: center !important;
+		}
+		
+		.#{$infix}flex-wrap { flex-wrap: wrap !important; }
+		.#{$infix}flex-nowrap { flex-wrap: nowrap !important; }
+		
+		.#{$infix}justify-center { justify-content: center !important; }
+		.#{$infix}justify-start { justify-content: flex-start !important; }
+		.#{$infix}justify-end { justify-content: flex-end !important; }
+		.#{$infix}justify-between { justify-content: space-between !important; }
+		.#{$infix}justify-around { justify-content: space-around !important; }
+		
+		.#{$infix}align-center { align-items: center !important; }
+		.#{$infix}align-start { align-items: flex-start !important; }
+		.#{$infix}align-end { align-items: flex-end !important; }
+		.#{$infix}align-between { align-items: space-between !important; }
+		.#{$infix}align-around { align-items: space-around !important; }
+		
+		.#{$infix}content-center { align-content: center !important; }
+		.#{$infix}content-start { align-content: flex-start !important; }
+		.#{$infix}content-end { align-content: flex-end !important; }
+		.#{$infix}content-between { align-content: space-between !important; }
+		.#{$infix}content-around { align-content: space-around !important; }
+		
+		.#{$infix}self-center { align-self: center !important; }
+		.#{$infix}self-start { align-self: flex-start !important; }
+		.#{$infix}self-end { align-self: flex-end !important; }
+		.#{$infix}self-between { align-self: space-between !important; }
+		.#{$infix}self-around { align-self: space-around !important; }
+		
+		.#{$infix}flex-fill { flex: 1 1 auto !important; }
+		.#{$infix}flex-grow-0 { flex-grow: 0 !important; }
+		.#{$infix}flex-grow-1 { flex-grow: 1 !important; }
+		.#{$infix}flex-shrink-0 { flex-shrink: 0 !important; }
+		.#{$infix}flex-shrink-1 { flex-shrink: 1 !important; }
+	}
 }

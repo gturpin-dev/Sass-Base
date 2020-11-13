@@ -1,10 +1,10 @@
 /// default placeholder
 /// ============================
 %spinner {
-  display: inline-block;
-  color: inherit;
-  vertical-align: middle;
-  pointer-events: none;
+	display: inline-block;
+	color: inherit;
+	vertical-align: middle;
+	pointer-events: none;
 }
 
 /// Template animation
@@ -12,11 +12,11 @@
 
 // use any of these placeholder in $animation to use it
 %classic {
-  border: .2em solid currentcolor;
-  border-bottom-color: transparent;
-  border-radius: 50%;
-  animation: 1s spin linear infinite;
-  position: relative;
+	border: .2em solid currentcolor;
+	border-bottom-color: transparent;
+	border-radius: 50%;
+	animation: 1s spin linear infinite;
+	position: relative;
 }
 
 %classic-bg {
@@ -25,7 +25,7 @@
 	border-radius: 50%;
 	animation: 1s spin linear infinite;
 	position: relative;
-
+	
 	&:before {
 		content: '';
 		display: block;
@@ -41,11 +41,11 @@
 }
 
 %classic-fit {
-  background: transparent;
-  border-top: 4px solid #03A9F4;
-  border-right: 4px solid transparent;
-  border-radius: 50%;
-  animation: 1s spin linear infinite;
+	background: transparent;
+	border-top: 4px solid #03A9F4;
+	border-right: 4px solid transparent;
+	border-radius: 50%;
+	animation: 1s spin linear infinite;
 }
 /// End Template animation
 /// ============================
@@ -59,11 +59,11 @@
 /// @since v-1.0.0
 /// @output a spinner which can be use like a loader
 @mixin spinner($size: 1em, $color: #000, $animation: 'classic') {
-  @extend %spinner;
-  width: $size;
-  height: $size;
-  color: $color;
-  @extend %#{$animation};
+	@extend %spinner;
+	width: $size;
+	height: $size;
+	color: $color;
+	@extend %#{$animation};
 }
 
 @keyframes spin {
@@ -78,17 +78,17 @@
 /// class declaration
 /// ============================
 $spinners: (
-  'classic',
-  'classic-bg',
-  'classic-fit',
+	'classic',
+	'classic-bg',
+	'classic-fit',
 );
 
 @each $color, $value in map-merge($user-colors, ('': currentColor)) {
-  @if ($color != '') { $color: '-' + $color; }
-
-  @each $spinner in $spinners {
-    .loader-#{$spinner}#{$color} {
-      @include spinner(1em, $value, $spinner);
-    }
-  }
+	@if ($color != '') { $color: '-' + $color; }
+	
+	@each $spinner in $spinners {
+		.loader-#{$spinner}#{$color} {
+			@include spinner(1em, $value, $spinner);
+		}
+	}
 }

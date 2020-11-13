@@ -1,5 +1,4 @@
 # *.css
 # *.css.map
-*.html
 node_modules/
 # dist/

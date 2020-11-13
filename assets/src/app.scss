@@ -4,9 +4,11 @@
 // Vendors
 // Comment and Uncomment to enable or not in the project
 @import 'vendor/family'; // https://lukyvj.github.io/family.scss/  | a set mixins which will help you to manage the style of :nth-child’ified elements, in an easy and classy way.
+
 $gl-colName: gl_col;
 @import 'vendor/gridlex/gridlex'; // http://gridlex.devlint.fr/  | css grid system to quickly create modern layouts and submodules.
 .grid { margin: unset; }
+
 @import 'vendor/burger'; // http://joren.co/sass-burger/  | Sass mixins to easily set a burger menu
 
 // Base

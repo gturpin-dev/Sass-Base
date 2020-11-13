@@ -1,19 +1,19 @@
 /// colors and background
 /// ============================
 @each $name, $color in $user-colors {
-  .color-#{$name} {
-    color: $color !important;
-  }
-
-  .bg-#{$name} {
-    background-color: $color !important;
-  }
-
-  .hover\:color-#{$name}:hover {
-    color: $color !important;
-  }
-
-  .hover\:bg-#{$name}:hover {
-    background-color: $color !important;
-  }
+	.color-#{$name} {
+		color: $color !important;
+	}
+	
+	.bg-#{$name} {
+		background-color: $color !important;
+	}
+	
+	.hover\:color-#{$name}:hover {
+		color: $color !important;
+	}
+	
+	.hover\:bg-#{$name}:hover {
+		background-color: $color !important;
+	}
 }

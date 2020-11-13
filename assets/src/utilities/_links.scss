@@ -1,12 +1,12 @@
 /// Creating links from mixins
 /// ============================
 @each $name, $color in $user-colors {
-  .link-classic-#{$name} { @include link-classic($color); }
-  .link-bg-bottom-top-#{$name} { @include link-bg-bottom-top($color); }
-
-  .link-full-left-right-#{$name} { @include link-full-left-right($color); }
-  .link-full-right-left-#{$name} { @include link-full-right-left($color); }
-
-  .link-empty-left-right-#{$name} { @include link-empty-left-right($color); }
-  .link-empty-right-left-#{$name} { @include link-empty-right-left($color); }
+	.link-classic-#{$name} { @include link-classic($color); }
+	.link-bg-bottom-top-#{$name} { @include link-bg-bottom-top($color); }
+	
+	.link-full-left-right-#{$name} { @include link-full-left-right($color); }
+	.link-full-right-left-#{$name} { @include link-full-right-left($color); }
+	
+	.link-empty-left-right-#{$name} { @include link-empty-left-right($color); }
+	.link-empty-right-left-#{$name} { @include link-empty-right-left($color); }
 }

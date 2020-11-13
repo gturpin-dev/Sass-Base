@@ -1,59 +1,59 @@
 /// Responsive Emmet abbreviation in classes
 /// ============================
 @each $bp-name, $breakpoint in $breakpoints {
-  @include above($breakpoint) {
-    $infix: infix($bp-name, $breakpoints);
-    /// Position
-    /// ============================
-    .#{$infix}posa { position: absolute !important; }
-    .#{$infix}posr { position: relative !important; }
-
-    /// Overflow
-    /// ============================
-    .#{$infix}ovh { overflow: hidden !important; }
-    .#{$infix}ovv { overflow: visible !important; }
-    .#{$infix}ovs { overflow: scroll !important; }
-    .#{$infix}ovxh { overflow-x: hidden !important; }
-    .#{$infix}ovxv { overflow-x: visible !important; }
-    .#{$infix}ovxs { overflow-x: scroll !important; }
-    .#{$infix}ovyh { overflow-y: hidden !important; }
-    .#{$infix}ovyv { overflow-y: visible !important; }
-    .#{$infix}ovys { overflow-y: scroll !important; }
-
-    /// Cursor
-    /// ============================
-    .#{$infix}cup { cursor: pointer !important; }
-
-    /// Fonts
-    /// ============================
-    .#{$infix}fwb { font-weight: bold !important; }
-    .#{$infix}fwn { font-weight: normal !important; }
-    .#{$infix}fsi { font-style: italic !important; }
-
-    /// Text
-    /// ============================
-    .#{$infix}vab { vertical-align: bottom !important; }
-    .#{$infix}vat { vertical-align: top !important; }
-    .#{$infix}vam { vertical-align: middle !important; }
-
-    .#{$infix}tac { text-align: center !important; }
-    .#{$infix}tar { text-align: right !important; }
-    .#{$infix}tal { text-align: left !important; }
-
-    .#{$infix}tdn { text-decoration: none !important; }
-    .#{$infix}tdu { text-decoration: underline !important; }
-
-    .#{$infix}ttu { text-transform: uppercase !important; }
-    .#{$infix}ttc { text-transform: capitalize !important; }
-    .#{$infix}ttn { text-transform: none !important; }
-    .#{$infix}ttl { text-transform: lowercase !important; }
-
-    .#{$infix}whsnw { white-space: nowrap !important; }
-
-    .#{$infix}oln { outline: none !important; }
-
-    /// List
-    /// ============================
-    .#{$infix}lisn { list-style: none !important; }
-  }
+	@include above($breakpoint) {
+		$infix: infix($bp-name, $breakpoints);
+		/// Position
+		/// ============================
+		.#{$infix}posa { position: absolute !important; }
+		.#{$infix}posr { position: relative !important; }
+		
+		/// Overflow
+		/// ============================
+		.#{$infix}ovh { overflow: hidden !important; }
+		.#{$infix}ovv { overflow: visible !important; }
+		.#{$infix}ovs { overflow: scroll !important; }
+		.#{$infix}ovxh { overflow-x: hidden !important; }
+		.#{$infix}ovxv { overflow-x: visible !important; }
+		.#{$infix}ovxs { overflow-x: scroll !important; }
+		.#{$infix}ovyh { overflow-y: hidden !important; }
+		.#{$infix}ovyv { overflow-y: visible !important; }
+		.#{$infix}ovys { overflow-y: scroll !important; }
+		
+		/// Cursor
+		/// ============================
+		.#{$infix}cup { cursor: pointer !important; }
+		
+		/// Fonts
+		/// ============================
+		.#{$infix}fwb { font-weight: bold !important; }
+		.#{$infix}fwn { font-weight: normal !important; }
+		.#{$infix}fsi { font-style: italic !important; }
+		
+		/// Text
+		/// ============================
+		.#{$infix}vab { vertical-align: bottom !important; }
+		.#{$infix}vat { vertical-align: top !important; }
+		.#{$infix}vam { vertical-align: middle !important; }
+		
+		.#{$infix}tac { text-align: center !important; }
+		.#{$infix}tar { text-align: right !important; }
+		.#{$infix}tal { text-align: left !important; }
+		
+		.#{$infix}tdn { text-decoration: none !important; }
+		.#{$infix}tdu { text-decoration: underline !important; }
+		
+		.#{$infix}ttu { text-transform: uppercase !important; }
+		.#{$infix}ttc { text-transform: capitalize !important; }
+		.#{$infix}ttn { text-transform: none !important; }
+		.#{$infix}ttl { text-transform: lowercase !important; }
+		
+		.#{$infix}whsnw { white-space: nowrap !important; }
+		
+		.#{$infix}oln { outline: none !important; }
+		
+		/// List
+		/// ============================
+		.#{$infix}lisn { list-style: none !important; }
+	}
 }

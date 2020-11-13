@@ -1,0 +1,100 @@
+# core/_reset.scss
+
+This is a reset based on https://hankchizljaw.com/wrote/a-modern-css-reset/ i integrated this one to Sass Base to have a modern css reset, i also customize it for common use
+
+## Features
+
+Sass Base reset `box-sizing` to `border-box`, `outline`, `margins`, `min-height` of body and a lot more, see source code below
+ 
+## Source Code
+
+```scss
+/// Modern Css Reset
+/// From github base and get updated
+/// @link https://hankchizljaw.com/wrote/a-modern-css-reset/
+/// ============================
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	outline: none;
+}
+
+/* Remove default padding */
+ul,
+ol {
+	padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+html {
+	margin-top: 0 !important;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	scroll-behavior: smooth;
+	text-rendering: optimizeSpeed;
+	line-height: 1.3;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul,
+ol {
+	list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* A elements that have a class get default styles */
+a {
+	text-decoration: none;
+}
+
+/* Make images easier to work with */
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+```

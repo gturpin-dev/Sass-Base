@@ -6,13 +6,15 @@ Each type of buttons is looped over `$user-colors` (from [core/variables.scss](g
 
 | class                   | description                             |
 | ----------------------- | --------------------------------------- |
-| .button-{color}         | classic button with a darken on: hover  |
-| .button-outline-{color} | outlined button become full on  : hover |
-| .button-invert-{color}  | the reverse of outlined button          |
+| .button-**{color}**         | classic button with a darken on: hover  |
+| .button-outline-**{color}** | outlined button become full on  : hover |
+| .button-invert-**{color}**  | the reverse of outlined button          |
 
-Buttons are generated with above classes and you can change "color" with every `$user-colors` key. e.g. `.button-secondary` or `.button-lightgrey` etc...
+!> Note that `{color}` replace every key from `$user-colors`
 
-They are also generated with a color contrasted from his background, then if the background is darker, the color will automatically change into white (this behavior comes from [text mixins](guide/mixins/text.md?id=text-contrast))
+Buttons are generated with above classes and you can replace "color" with every `$user-colors` key e.g. `.button-secondary` or `.button-lightgrey` etc...
+
+They are also generated with a color contrasted from his background, then if the background is darker, the color will automatically change into white (this behavior comes from [text mixins](guide/mixins/typography.md?id=text-contrast))
 
 ## Examples
 
@@ -48,5 +50,36 @@ You can also use the `%btn` placeholder which set default style for every button
 	outline: none !important;
 	cursor: pointer;
 	transition: .4s;
+}
+```
+
+## Source Code
+```scss
+%btn {
+	display: inline-block;
+	padding: .5em 2em;
+	text-decoration: none !important;
+	user-select: none !important;
+	outline: none !important;
+	cursor: pointer;
+	transition: .4s;
+}
+
+// Creates a button with variation of each color in $user-colors
+@each $color, $value in $user-colors {
+	.button-#{$color} {
+		@extend %btn;
+		@include button-variant($value);
+	}
+	
+	.button-outline-#{$color} {
+		@extend %btn;
+		@include button-outline-variant($value);
+	}
+	
+	.button-invert-#{$color} {
+		@extend %btn;
+		@include button-invert-variant($value);
+	}
 }
 ```

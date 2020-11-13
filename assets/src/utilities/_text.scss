@@ -10,60 +10,60 @@ $range-font-size: (10, 40);
 .text-nowrap { white-space: nowrap !important; }
 
 .text-excerpt {
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  white-space: nowrap !important;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+	white-space: nowrap !important;
 }
 
 /// extend items
 /// ============================
 .noextend,
 .child-noextend > * {
-  width: min-content;
-  white-space: nowrap;
+	width: min-content;
+	white-space: nowrap;
 }
 
 @each $bp-name, $breakpoint in $breakpoints {
-  @include above($breakpoint) {
-    $infix: infix($bp-name, $breakpoints);
-    /// text align
-    /// ============================
-    .#{$infix}text-center { text-align: center !important; }
-    .#{$infix}text-left { text-align: left !important; }
-    .#{$infix}text-right { text-align: right !important; }
-
-    /// excerpt text
-    /// ============================
-    @for $i from nth($range-text-excerpt, 1) through nth($range-text-excerpt, 2) {
-      .#{$infix}excerpt-text-#{$i} {
-        @include excerpt-text($lineCount: $i);
-      }
-    }
-
-    /// line-height
-    /// ============================
-    @for $i from nth($range-line-height, 1) through nth($range-line-height, 2) {
-      .#{$infix}lh-#{$i} {
-        line-height: $i/10 !important;
-      }
-    }
-
-    /// font size
-    /// ============================
-    @for $i from nth($range-font-size, 1) through nth($range-font-size, 2) {
-      .#{$infix}fs-#{$i} {
-        font-size: #{$i}px !important;
-      }
-    }
-
-    /// font size
-    /// ============================
-    @for $i from 1 through 9 {
-      $i: $i * 100;
-
-      .#{$infix}fw-#{$i} {
-        font-weight: $i !important;
-      }
-    }
-  } // @include above
+	@include above($breakpoint) {
+		$infix: infix($bp-name, $breakpoints);
+		/// text align
+		/// ============================
+		.#{$infix}text-center { text-align: center !important; }
+		.#{$infix}text-left { text-align: left !important; }
+		.#{$infix}text-right { text-align: right !important; }
+		
+		/// excerpt text
+		/// ============================
+		@for $i from nth($range-text-excerpt, 1) through nth($range-text-excerpt, 2) {
+			.#{$infix}excerpt-text-#{$i} {
+				@include excerpt-text($lineCount: $i);
+			}
+		}
+		
+		/// line-height
+		/// ============================
+		@for $i from nth($range-line-height, 1) through nth($range-line-height, 2) {
+			.#{$infix}lh-#{$i} {
+				line-height: $i/10 !important;
+			}
+		}
+		
+		/// font size
+		/// ============================
+		@for $i from nth($range-font-size, 1) through nth($range-font-size, 2) {
+			.#{$infix}fs-#{$i} {
+				font-size: #{$i}px !important;
+			}
+		}
+		
+		/// font size
+		/// ============================
+		@for $i from 1 through 9 {
+			$i: $i * 100;
+			
+			.#{$infix}fw-#{$i} {
+				font-weight: $i !important;
+			}
+		}
+	} // @include above
 } // @each

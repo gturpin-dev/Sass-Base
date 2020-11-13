@@ -7,8 +7,8 @@
 /// @author Guillaume TURPIN
 /// @since v-1.0.1
 @mixin under($size) {
-  $size: strip-unit($size);
-  @media (max-width: #{$size}px) { @content; }
+	$size: strip-unit($size);
+	@media (max-width: #{$size}px) { @content; }
 }
 
 /// return the content above the breakpoint param
@@ -20,8 +20,8 @@
 /// @author Guillaume TURPIN
 /// @since v-1.0.1
 @mixin above($size) {
-  $size: strip-unit($size);
-  @media (min-width: #{$size}px) { @content; }
+	$size: strip-unit($size);
+	@media (min-width: #{$size}px) { @content; }
 }
 
 /// return blank string for global bp or the bp for others
@@ -32,11 +32,11 @@
 /// @author Guillaume TURPIN
 /// @since v-3.0.1
 @function infix($bp-name, $breakpoints: $breakpoints) {
-  $bp-value: map-get($breakpoints, $bp-name);
-
-  @if ($bp-value != 0) {
-    @return "#{$bp-name}\\:";
-  } @else {
-    @return '';
-  }
+	$bp-value: map-get($breakpoints, $bp-name);
+	
+	@if ($bp-value != 0) {
+		@return "#{$bp-name}\\:";
+	} @else {
+		@return '';
+	}
 }
