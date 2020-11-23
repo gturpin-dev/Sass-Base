@@ -2,7 +2,7 @@
 
 In Sass Base I set a lot of features of [Emmet.io](https://docs.emmet.io/cheat-sheet/) which you must have it in your IDE, then if you want to use utilities classes but keep your html clean you can use emmet classes, I set the usefull one for me, feel free to add yours if you need
 
-| class  | Category | css value                   |
+| class  | category | css value                   |
 | ------ | -------- | --------------------------- |
 | .posa  | position | position: absolute;         |
 | .posr  | position | position: relative;         |
