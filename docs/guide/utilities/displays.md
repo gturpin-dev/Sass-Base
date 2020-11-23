@@ -2,9 +2,9 @@
 
 You can use displays class easily, just follow the table below :
 
-| class   | css value              |
-|---------|------------------------|
-| .d-none | display: none;         |
+| class   | css value              | 
+|---------|------------------------| 
+| .d-none | display: none;         | 
 | .inline | display: inline;       |
 | .block  | display: block;        |
 | .iblock | display: inline-block; |
