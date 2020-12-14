@@ -1,6 +1,6 @@
-<!-- ![logo](_media/icon.svg) TODO logo sass base -->
+![logo](/sassbase.png)
 
-# Sass Base <small>3.1.2</small>
+#  <small>3.1.2</small>
 
 > A magical Sass base for your projects.
 
