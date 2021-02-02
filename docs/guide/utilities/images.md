@@ -1,4 +1,4 @@
-# utilities/_flex.scss
+# utilities/_images.scss
 
 Theses images classes are there to help you manage them easily 
 

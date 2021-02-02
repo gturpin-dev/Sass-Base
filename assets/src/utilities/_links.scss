@@ -9,4 +9,6 @@
 	
 	.link-empty-left-right-#{$name} { @include link-empty-left-right($color); }
 	.link-empty-right-left-#{$name} { @include link-empty-right-left($color); }
+
+	.link-full-center-#{$name} { @include link-full-center($color); }
 }

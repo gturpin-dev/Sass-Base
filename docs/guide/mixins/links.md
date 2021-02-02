@@ -1,7 +1,7 @@
-# mixins/_breakpoints.scss
+# mixins/_links.scss
 
-Theses mixins have been separated from [utilities/_links.scss](guide/utilities/links.md) to add more flexibility, in case if you want to create your own buttons on a custom base.  
-Then mixins below are only used to create `Sass Base Buttons`
+Theses mixins have been separated from [utilities/_links.scss](guide/utilities/links.md) to add more flexibility, in case if you want to create your own links on a custom base.  
+Then mixins below are only used to create `Sass Base Links`
 
 !> In most of the case you won't use theses mixins
 
@@ -130,6 +130,30 @@ If you want more explanation, see [utilities/_links.scss](guide/utilities/links.
 	&:hover:after {
 		transform: scaleX(0);
 		transform-origin: center left;
+	}
+}
+
+
+/// display link from center to sides with default visible state
+/// @param  {color}  $color link color
+/// @author Guillaume TURPIN
+/// @since v-3.1.1
+@mixin link-full-center($color) {
+	@include link-default();
+
+	&:after {
+		bottom: -3px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: $color;
+		transition: transform .4s;
+		transform: scaleX(0);
+		transform-origin: center;
+	}
+	
+	&:hover:after {
+		transform: scaleX(1);
 	}
 }
 ```

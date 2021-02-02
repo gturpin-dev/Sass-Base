@@ -1,11 +1,11 @@
 # utilities/_buttons.scss
 
-Buttons class are made to be used with `<a>`, `<button>` and `<input>` tags
+Buttons classes are made to be used with `<a>`, `<button>` and `<input>` tags
 
 Each type of buttons is looped over `$user-colors` (from [core/variables.scss](guide/core/variables)) so the generated buttons will depend of your colors array
 
-| class                   | description                             |
-| ----------------------- | --------------------------------------- |
+| class                       | description                             |
+| --------------------------- | --------------------------------------- |
 | .button-**{color}**         | classic button with a darken on: hover  |
 | .button-outline-**{color}** | outlined button become full on  : hover |
 | .button-invert-**{color}**  | the reverse of outlined button          |
@@ -34,7 +34,7 @@ Active states (`:active`, `.active`) is actually the same of `:hover` states on 
 
 ## How to custom
 
-If the default buttons don't fill your needs, you can update a bit by using [utilities class](guide/utilities) to change padding, color, hover color, background color, font-size and more :
+If the default buttons don't fill your needs, you can update a bit by using [utilities classes](guide/utilities) to change padding, color, hover color, background color, font-size and more :
 
 ```html
 <a href="#" class="button-primary px-250 py-75 color-blue hover:color-red fs-18">button</a>

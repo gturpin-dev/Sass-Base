@@ -1,4 +1,4 @@
-# mixins/_breakpoints.scss
+# mixins/_buttons.scss
 
 Theses mixins have been separated from [utilities/_buttons.scss](guide/utilities/buttons.md) to add more flexibility, in case if you want to create your own buttons on a custom base.  
 Then mixins below are only used to create `Sass Base Buttons`
