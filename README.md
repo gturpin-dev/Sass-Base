@@ -7,3 +7,7 @@ Welcome to Sass Base Documentation.
 Sass Base is a skeleton to help you to start a project using sass easily, and so it will help you after with its large amount of usefull class, components and even mixins.
 
 I encourage you to get an overview of the project folder, it will help you to start and know what you are using :)
+
+## Documentation
+
+(https://gturpin-dev.github.io/Sass-Base/#/)
