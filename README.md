@@ -10,4 +10,4 @@ I encourage you to get an overview of the project folder, it will help you to st
 
 ## Documentation
 
-(https://gturpin-dev.github.io/Sass-Base/#/)
+[](https://gturpin-dev.github.io/Sass-Base/#/)
